@@ -55,7 +55,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className='border border-t border-b-0 border-gray-100 dark:border-zinc-800 md:p-5'>
+      <footer className='border border-t border-b-0 border-gray-100 dark:border-zinc-800 py-3 md:p-5'>
         <div className="container mx-auto poverflow-hidden px-10 sm:px-20">
           <p className='secondary'>Made with &#129293; and &#127861; by Tim Ritter, {new Date().getFullYear().toString()}</p>
         </div>
