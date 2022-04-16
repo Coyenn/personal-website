@@ -1,12 +1,11 @@
 import Head from 'next/head'
-import Link from 'next/link'
 
 export default function Home() {
   return (
     <>
       <Head>
         <title>Tim Ritter</title>
-        <meta name="description" content="Tim Ritters personal website" />
+        <meta name="description" content="Tim Ritter - personal website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -18,7 +17,7 @@ export default function Home() {
           </div>
           <div className="py-2 md:py-3">
             <p className='pb-2 secondary'><small>About Me</small></p>
-            <p>Hey there! I'm <em>Tim</em>, a {(Math.floor((Number(new Date()) - new Date('2004-06-05').getTime()) / 3.15576e+10)).toString()}-year-old trainee Software Developer from Germany. I've been interested in visually pleasing web experiences for a long time. One day I started out creating websites as a hobby. Now I do it full-time and try to gradually improve my work one step at a time.</p>
+            <p>Hey there! I&apos;m <em>Tim</em>, a {(Math.floor((Number(new Date()) - new Date('2004-06-05').getTime()) / 3.15576e+10)).toString()}-year-old trainee Software Developer from Germany. I&apos;ve been interested in visually pleasing web experiences for a long time. One day I started out creating websites as a hobby. Now I do it full-time and try to gradually improve my work one step at a time.</p>
           </div>
           <div className="py-2 md:py-3">
             <p className='pb-2 secondary'><small>Projects</small></p>
@@ -51,7 +50,7 @@ export default function Home() {
           </div>
           <div className="py-2 md:py-3">
             <p className='pb-2 secondary'><small>Contact</small></p>
-            <p>Let's get in <em>touch</em>. Contact me at <a href="mailto:t-ritter-mail@web.de">t-ritter-mail@web.de</a></p>
+            <p>Let&apos;s get in <em>touch</em>. Contact me at <a href="mailto:t-ritter-mail@web.de">t-ritter-mail@web.de</a></p>
           </div>
         </div>
       </main>
