@@ -1,0 +1,10 @@
+version: '3.5'
+services:
+  nextjs:
+    image: node:latest
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+    entrypoint: ["yarn", "dev"]
+    working_dir: /app
