@@ -6,10 +6,10 @@ module.exports = {
   theme: {
     container: {
       screens: {
-         sm: "100%",
-         md: "100%",
-         lg: "600px",
-         xl: "700px"
+        sm: "100%",
+        md: "100%",
+        lg: "700px",
+        xl: "750px"
       }
     },
     fontSize: {
@@ -24,7 +24,11 @@ module.exports = {
       '5xl': '3rem',
       '6xl': '4rem',
     },
-    extend: {},
+    extend: {
+      textDecorationThickness: {
+        1: '1.5px',
+      }
+    },
   },
   plugins: [
     'postcss-import',
