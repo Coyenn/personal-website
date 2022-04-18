@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "./fonts.scss";
 
 body, #__next {
     @apply bg-gray-50 dark:bg-zinc-900 min-h-screen flex flex-col justify-between;
