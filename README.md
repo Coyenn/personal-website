@@ -3,12 +3,10 @@ This is my personal Website. It's automatically deployed to [tim-ritter.com](htt
 
 ## Getting Started
 
-First, run the development server:
+Run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
+docker-compose up
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

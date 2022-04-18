@@ -3,9 +3,6 @@ import { Component } from "react";
 export default class DarkModeDetector extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      theme: "light",
-    }
   }
 
   setTheme(){
@@ -21,7 +18,6 @@ export default class DarkModeDetector extends Component {
     this.setTheme();
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', this.setTheme)
   }
-
 
   render() {
     return (

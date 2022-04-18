@@ -1,13 +1,14 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "./fonts.scss";
 
 body, #__next {
     @apply bg-gray-50 dark:bg-zinc-900 min-h-screen flex flex-col justify-between;
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
-    @apply text-zinc-700 dark:text-gray-300;
+    @apply text-zinc-800 dark:text-gray-300;
 }
 
 .secondary {
@@ -43,5 +44,9 @@ h6 {
 }
 
 a, .link {
-    @apply underline decoration-zinc-400 hover:decoration-zinc-500 dark:decoration-gray-500 dark:hover:decoration-gray-400 transition-all duration-200;
+    @apply underline decoration-1 underline-offset-4 decoration-zinc-300 hover:decoration-zinc-500 dark:decoration-gray-500 dark:hover:decoration-gray-400 transition-all duration-200;
+}
+
+.page-section {
+    @apply py-2 md:py-3 xl:py-4;
 }
