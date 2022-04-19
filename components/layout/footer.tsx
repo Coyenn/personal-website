@@ -1,8 +1,6 @@
-import Link from "next/link";
-
 export default function Footer() {
     return (
-        <footer className='border border-t border-b-0 border-gray-100 dark:border-zinc-800 py-3'>
+        <footer className='border border-t border-b-0 border-gray-100 dark:border-zinc-800 py-3 mt-auto'>
             <div className="container mx-auto poverflow-hidden px-10 sm:px-20">
                 <div className="flex flex-row justify-between">
                     <p className='secondary'>

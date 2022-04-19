@@ -1,5 +1,4 @@
 import FadeIn from 'react-fade-in'
-import Footer from '../components/layout/footer'
 import Project from '../components/projects/project'
 import PageSection from '../components/layout/page-section'
 
@@ -7,7 +6,7 @@ export default function Home() {
   return (
     <>
       <main>
-        <div className="container mx-auto py-10 sm:py-20 lg:py-32 xl:py-44 px-10 sm:px-20 overflow-hidden">
+        <div className="container mx-auto py-10 sm:py-20 lg:py-32 2xl:py-40 px-10 sm:px-20 overflow-hidden">
           <FadeIn>
             <PageSection>
               <p className="lead mb-4 md:mb-5">
@@ -53,7 +52,6 @@ export default function Home() {
           </FadeIn>
         </div>
       </main>
-      <Footer />
     </>
   )
 }
