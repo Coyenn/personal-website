@@ -14,7 +14,7 @@ export async function getStaticProps() {
         'Authorization': `Bearer ${token}`,
       },
       body: JSON.stringify({
-        query: '{ allProjects { title, content, link, _status } }'
+        query: '{ allProjects { title, content, link, _status, id } }'
       }),
     }
   )
@@ -53,6 +53,7 @@ function Home({ responseData }) {
                         link={project.link}
                         name={project.title}
                         description={project.content}
+                        key={project.id}
                       />
                     )
                   })}
