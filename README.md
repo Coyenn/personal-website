@@ -10,3 +10,7 @@ docker-compose up
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Edit Content using DatoCMS
+
+Open [https://cms.tim-ritter.com](https://cms.tim-ritter.com) in your browser and get started.
