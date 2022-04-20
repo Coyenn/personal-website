@@ -2,7 +2,32 @@ import FadeIn from 'react-fade-in'
 import Project from '../components/projects/project'
 import PageSection from '../components/layout/page-section'
 
-export default function Home() {
+export async function getStaticProps() {
+  const token = process.env.DATO_API_KEY
+  const response = await fetch(
+    'https://graphql.datocms.com/',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        query: '{ allProjects { title, content, link, _status } }'
+      }),
+    }
+  )
+  const responseData = (await response.json())?.data;
+
+  return {
+    props: {
+      responseData,
+    },
+  }
+}
+
+function Home({ responseData }) {
   return (
     <>
       <main>
@@ -22,26 +47,15 @@ export default function Home() {
               <div className="py-2 md:py-3">
                 <p className='mb-3 secondary'><small>Projects</small></p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
-                  <Project
-                    link='https://github.com/coyenn/cloudboard'
-                    name='Cloudboard'
-                    description='A self-hosted personal dashboard to list microservices and websites. Similar to Flame, Homer or Heimdall.'
-                  />
-                  <Project
-                    link='https://github.com/coyenn/zep'
-                    name='Zep'
-                    description='Instantly available Roblox Plugin development boilerplate using Roact and Roblox-TS.'
-                  />
-                  <Project
-                    link='https://github.com/coyenn/personal-website'
-                    name='Personal Website'
-                    description='My personal website. Developed using NextJS, TypeScript, SCSS and a lot of &#127861;.'
-                  />
-                  <Project
-                    link='https://github.com/coyenn/homelab'
-                    name='HomeLab'
-                    description='I run services on my old Desktop PC. This project includes all files necessary to get it up and running.'
-                  />
+                  {responseData.allProjects?.map((project) => {
+                    return (
+                      <Project
+                        link={project.link}
+                        name={project.title}
+                        description={project.content}
+                      />
+                    )
+                  })}
                 </div>
               </div>
             </PageSection>
@@ -55,3 +69,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home;
