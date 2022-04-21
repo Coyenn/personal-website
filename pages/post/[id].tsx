@@ -53,7 +53,6 @@ class PostView extends React.Component<BlogPostProps, BlogPostState>{
             <>
                 <main>
                     <article>
-                        <div className="container mx-auto py-10 sm:py-20 lg:py-32 2xl:py-40 px-10 sm:px-20 overflow-hidden">
                             <FadeIn>
                                 <PageSection>
                                     <div className="mb-10">
@@ -79,7 +78,6 @@ class PostView extends React.Component<BlogPostProps, BlogPostState>{
                                     </div>
                                 </PageSection>
                             </FadeIn>
-                        </div>
                     </article>
                 </main>
             </>

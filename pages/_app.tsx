@@ -11,7 +11,7 @@ function App({ Component, pageProps }) {
         <meta name="description" content="Tim Ritter" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
+      <div className="container mx-auto py-10 sm:py-20 lg:py-30 px-10 sm:px-20 overflow-hidden">
         <DarkModeDetector />
         <Component {...pageProps} />
       </div>
