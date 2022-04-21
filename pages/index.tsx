@@ -1,33 +1,22 @@
 import FadeIn from 'react-fade-in'
-import Project from '../components/projects/project'
 import PageSection from '../components/layout/page-section'
+import AllPosts from '../components/posts/all-posts';
+import AllProjects from '../components/projects/all-projects'
+import query from '../lib/cms-query'
 
 export async function getStaticProps() {
-  const token = process.env.DATO_API_KEY
-  const response = await fetch(
-    'https://graphql.datocms.com/',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-      body: JSON.stringify({
-        query: '{ allProjects { title, content, link, _status, id } }'
-      }),
-    }
-  )
-  const responseData = (await response.json())?.data;
+  const allProjects = (await query('{ allProjects { title, content, link, id, _status } }'))?.allProjects;
+  const allPosts = (await query('{ allBlogPosts { title, content, id, _firstPublishedAt, _status } }'))?.allBlogPosts;
 
   return {
     props: {
-      responseData,
+      allProjects,
+      allPosts,
     },
   }
 }
 
-function Home({ responseData }) {
+function Home({ allProjects, allPosts }) {
   return (
     <>
       <main>
@@ -43,24 +32,11 @@ function Home({ responseData }) {
               <p className='mb-3 secondary'><small>About Me</small></p>
               <p>Hey there! I&apos;m <em>Tim</em>, a {(Math.floor((Number(new Date()) - new Date('2004-06-05').getTime()) / 3.15576e+10)).toString()}-year-old trainee Software Developer from Germany. I&apos;ve been interested in visually pleasing web experiences for a while. One day I started out creating websites as a hobby. Now I do it full-time and try to gradually improve my work one step at a time.</p>
             </PageSection>
+              <AllProjects allProjects={allProjects} />
             <PageSection>
-              <div className="py-2 md:py-3">
-                <p className='mb-3 secondary'><small>Projects</small></p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
-                  {responseData.allProjects?.map((project) => {
-                    if (project._status === "published") {
-                      return (
-                        <Project
-                          link={project.link}
-                          name={project.title}
-                          description={project.content}
-                          key={project.id}
-                        />
-                      )
-                    }
-                  })}
-                </div>
-              </div>
+            </PageSection>
+              <AllPosts allPosts={allPosts} />
+            <PageSection>
             </PageSection>
             <PageSection>
               <p className='mb-3 secondary'><small>Contact</small></p>
