@@ -15,7 +15,7 @@ export default function PostPreview(props: Post) {
                     <p className="md:mr-5">{props.title}</p>
                     <p className="secondary order-first md:order-last mb-2 md:mb-0">
                         <small>
-                            {props.publishedAt.split("T")[0].replaceAll("-", "/")}
+                            {props.publishedAt.split("T")[0].replace("/-/g", "/")}
                         </small>
                     </p>
                 </a>

@@ -38,7 +38,7 @@ export default function Post({ id, post }) {
                                     {post.title}
                                 </p>
                                 <p className="secondary order-first md:order-last mb-2 md:mb-0">
-                                    <small>{post._firstPublishedAt.split("T")[0].replaceAll("-", "/")}</small>
+                                    <small>{post._firstPublishedAt.split("T")[0].replace("/-/g", "/")}</small>
                                 </p>
                                 </div>
                                 <div className="prose dark:prose-invert">
