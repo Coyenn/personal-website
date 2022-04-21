@@ -32,11 +32,11 @@ function Home({ allProjects, allPosts }) {
               <p className='mb-3 secondary'><small>About Me</small></p>
               <p>Hey there! I&apos;m <em>Tim</em>, a {(Math.floor((Number(new Date()) - new Date('2004-06-05').getTime()) / 3.15576e+10)).toString()}-year-old trainee Software Developer from Germany. I&apos;ve been interested in visually pleasing web experiences for a while. One day I started out creating websites as a hobby. Now I do it full-time and try to gradually improve my work one step at a time.</p>
             </PageSection>
+            <PageSection>
               <AllProjects allProjects={allProjects} />
-            <PageSection>
             </PageSection>
-              <AllPosts allPosts={allPosts} />
             <PageSection>
+              <AllPosts allPosts={allPosts} />
             </PageSection>
             <PageSection>
               <p className='mb-3 secondary'><small>Contact</small></p>
