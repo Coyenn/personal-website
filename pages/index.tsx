@@ -48,14 +48,16 @@ function Home({ responseData }) {
                 <p className='mb-3 secondary'><small>Projects</small></p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
                   {responseData.allProjects?.map((project) => {
-                    return (
-                      <Project
-                        link={project.link}
-                        name={project.title}
-                        description={project.content}
-                        key={project.id}
-                      />
-                    )
+                    if (project._status === "published") {
+                      return (
+                        <Project
+                          link={project.link}
+                          name={project.title}
+                          description={project.content}
+                          key={project.id}
+                        />
+                      )
+                    }
                   })}
                 </div>
               </div>
