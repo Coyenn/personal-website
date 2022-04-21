@@ -32,6 +32,7 @@ module.exports = {
   },
   plugins: [
     'postcss-import',
+    require('@tailwindcss/typography'),
   ],
   darkMode: 'class',
 }
