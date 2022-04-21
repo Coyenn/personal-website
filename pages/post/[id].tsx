@@ -68,7 +68,7 @@ class PostView extends React.Component<BlogPostProps, BlogPostState>{
                                             {this.state.post?.title}
                                         </p>
                                         <p className="secondary order-first md:order-last mb-2 md:mb-0">
-                                            <small>{this.state.post?._firstPublishedAt.split("T")[0].replace("/-/g", "/")}</small>
+                                            <small>{this.state.post?._firstPublishedAt.split("T")[0]}</small>
                                         </p>
                                     </div>
                                     <div className="prose dark:prose-invert">
