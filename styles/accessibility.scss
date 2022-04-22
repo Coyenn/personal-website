@@ -1,0 +1,7 @@
+@media screen and (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
