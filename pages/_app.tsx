@@ -15,8 +15,8 @@ function App({ Component, pageProps }) {
         <meta property='og:url' content='https://tim-ritter.com' />
         <meta name='twitter:url' content='https://tim-ritter.com' />
 
-        <meta property="og:image" content="/logo.jpg" />
-        <meta name="twitter:image" content="/logo.jpg" />
+        <meta property="og:image" content="/logo.png" />
+        <meta name="twitter:image" content="/logo.png" />
 
         <meta name="description" content="Hey there! I'm Tim, a 17-year-old trainee Software Developer from Germany." />
         <link rel="icon" href="/favicon.ico" />
