@@ -85,8 +85,8 @@ class PostView extends React.Component<BlogPostProps, BlogPostState>{
     }
 }
 
-export async function getServerSideProps(context) {
-    const { id } = context.query;
+export async function getStaticProps(context) {
+    const id = context.params.id;
     const token = process.env.DATO_API_KEY;
 
     return {
@@ -96,5 +96,15 @@ export async function getServerSideProps(context) {
         }
     }
 }
+
+export async function getStaticPaths() {
+    const allPosts = (await query('{allBlogPosts {id}}'))?.allBlogPosts;
+    const allPostIds = allPosts.map((post) => `/post/${post.id.toString()}`);
+
+    return {
+      paths: allPostIds,
+      fallback: true,
+    }
+  }
 
 export default PostView;
