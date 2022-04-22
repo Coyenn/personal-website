@@ -53,34 +53,38 @@ class PostView extends React.Component<BlogPostProps, BlogPostState>{
             <>
                 <main>
                     <article>
-                            <FadeIn>
-                                <PageSection>
-                                    <div className="mb-10">
-                                        <Link href='/' passHref={true}>
-                                            <a className="link cursor-pointer">
-                                                <ArrowLeftIcon className="w-4 h-4 inline mr-2" />
-                                                Go back
-                                            </a>
-                                        </Link>
-                                    </div>
-                                    <div className="flex justify-between flex-col md:flex-row">
-                                        <p className="lead mb-4 md:mb-5">
-                                            {this.state.post?.title}
-                                        </p>
-                                        <p className="secondary order-first md:order-last mb-2 md:mb-0">
-                                            <small>
-                                                <span className="sr-only">This blog post was first published on</span>
-                                                {this.state.post?._firstPublishedAt.split("T")[0]}
-                                            </small>
-                                        </p>
-                                    </div>
-                                    <div className="prose dark:prose-invert">
-                                        <ReactMarkdown>
-                                            {this.state.post?.content}
-                                        </ReactMarkdown>
-                                    </div>
-                                </PageSection>
-                            </FadeIn>
+                        <FadeIn>
+                            <PageSection>
+                                <div className="mb-10">
+                                    <Link href='/' passHref={true}>
+                                        <a className="link cursor-pointer">
+                                            <ArrowLeftIcon className="w-4 h-4 inline mr-2" />
+                                            Go back
+                                        </a>
+                                    </Link>
+                                </div>
+                                {this.state.post?.title ? (
+                                    <FadeIn>
+                                        <div className="flex justify-between flex-col md:flex-row">
+                                            <p className="lead mb-4 md:mb-5">
+                                                {this.state.post?.title}
+                                            </p>
+                                            <p className="secondary order-first md:order-last mb-2 md:mb-0">
+                                                <small>
+                                                    <span className="sr-only">This blog post was first published on</span>
+                                                    {this.state.post?._firstPublishedAt.split("T")[0]}
+                                                </small>
+                                            </p>
+                                        </div>
+                                        <div className="prose dark:prose-invert">
+                                            <ReactMarkdown>
+                                                {this.state.post?.content}
+                                            </ReactMarkdown>
+                                        </div>
+                                    </FadeIn>
+                                ) : <></>}
+                            </PageSection>
+                        </FadeIn>
                     </article>
                 </main>
             </>
@@ -105,9 +109,9 @@ export async function getStaticPaths() {
     const allPostIds = allPosts.map((post) => `/post/${post.id.toString()}`);
 
     return {
-      paths: allPostIds,
-      fallback: true,
+        paths: allPostIds,
+        fallback: true,
     }
-  }
+}
 
 export default PostView;
