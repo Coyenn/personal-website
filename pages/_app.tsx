@@ -17,6 +17,7 @@ function App({ Component, pageProps }) {
 
         <meta property="og:image" content="/logo.png" />
         <meta name="twitter:image" content="/logo.png" />
+        <meta property="og:description" content="Hey there! I'm Tim, a 17-year-old trainee Software Developer from Germany." />
 
         <meta name="description" content="Hey there! I'm Tim, a 17-year-old trainee Software Developer from Germany." />
         <link rel="icon" href="/favicon.ico" />
