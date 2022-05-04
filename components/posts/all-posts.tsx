@@ -6,7 +6,7 @@ function AllPosts({ allPosts }) {
             <p className='mb-3 secondary'><small>Writing</small></p>
             <div>
                 {allPosts?.map((post) => {
-                    if (post._status === "published") {
+                    if (post.published === true) {
                         return (
                             <PostPreview
                                 id={post.id}

@@ -3,6 +3,8 @@ This is my personal Website. It's automatically deployed to [tim-ritter.com](htt
 
 ## Getting Started
 
+[Open in Gitpod](http://gitpod.io/#https://github.com/Coyenn/personal-website)
+
 Run the development server:
 
 ```bash
