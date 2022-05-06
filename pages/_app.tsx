@@ -3,10 +3,11 @@ import Head from 'next/head';
 import Footer from "../components/layout/footer";
 import '../styles/globals.scss'
 import BackgroundGrid from "../components/utility/background-grid";
+import Header from "../components/layout/header";
 
 function App({ Component, pageProps }) {
   return (
-    <div className="flex flex-col justify-between min-h-screen bg-gray-50 dark:bg-zinc-900">
+    <div className="flex flex-col justify-between min-h-screen bg-gray-50 dark:bg-neutral-900">
       <Head>
         <title>Tim Ritter</title>
         <meta property='og:title' content='Tim Ritter | Person Website' />
@@ -23,9 +24,10 @@ function App({ Component, pageProps }) {
         <meta name="description" content="Hey there! I'm Tim, a 17-year-old trainee Software Developer from Germany." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <DarkModeDetector>
         <BackgroundGrid>
-          <div className="container mx-auto py-10 sm:py-20 lg:py-30 px-10 sm:px-20 overflow-hidden">
+          <div className="py-10 sm:py-20 lg:py-30">
             <Component {...pageProps} />
           </div>
         </BackgroundGrid>

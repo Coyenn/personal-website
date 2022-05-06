@@ -27,7 +27,12 @@ module.exports = {
     extend: {
       textDecorationThickness: {
         1: '1.5px',
-      }
+      },
+        colors: {
+          neutral: {
+            950: '#0a0a0a',
+          },
+        }
     },
   },
   plugins: [
