@@ -15,6 +15,7 @@ interface Post {
     id: string,
     title: string,
     content: string,
+    published: boolean,
     _status: string,
     _firstPublishedAt: string,
 }
@@ -39,7 +40,7 @@ class PostView extends React.Component<BlogPostProps, BlogPostState>{
     }
 
     async loadPost() {
-        const post = (await query(`{blogPost(filter: {id: {eq: "${this.props.id}"}}) { id, title, content, _status, _firstPublishedAt }}`, this.props.token))?.blogPost;
+        const post = (await query(`{blogPost(filter: {id: {eq: "${this.props.id}"}}) { id, title, content, published, _status, _firstPublishedAt }}`, this.props.token))?.blogPost;
 
         this.setState({
             loading: false,
@@ -63,7 +64,7 @@ class PostView extends React.Component<BlogPostProps, BlogPostState>{
                                         </a>
                                     </Link>
                                 </div>
-                                {this.state.post?.title ? (
+                                {this.state.post?.title !== undefined && this.state.post?.published === true ? (
                                     <FadeIn>
                                         <div className="flex justify-between flex-col md:flex-row">
                                             <p className="lead mb-4 md:mb-5">

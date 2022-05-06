@@ -1,6 +1,15 @@
+/*
+* Import tailwind
+*/
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+/*
+* Import custom scss
+*/
 @import "./fonts.scss";
 @import "./type.scss";
 @import "./accessibility.scss";
+@import "./background-grid.scss";
+@import "./text-gradient.scss";

@@ -2,6 +2,7 @@ import DarkModeDetector from "../components/utility/dark-mode-detector";
 import Head from 'next/head';
 import Footer from "../components/layout/footer";
 import '../styles/globals.scss'
+import BackgroundGrid from "../components/utility/background-grid";
 
 function App({ Component, pageProps }) {
   return (
@@ -22,10 +23,13 @@ function App({ Component, pageProps }) {
         <meta name="description" content="Hey there! I'm Tim, a 17-year-old trainee Software Developer from Germany." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="container mx-auto py-10 sm:py-20 lg:py-30 px-10 sm:px-20 overflow-hidden">
-        <DarkModeDetector />
-        <Component {...pageProps} />
-      </div>
+      <DarkModeDetector>
+        <BackgroundGrid>
+          <div className="container mx-auto py-10 sm:py-20 lg:py-30 px-10 sm:px-20 overflow-hidden">
+            <Component {...pageProps} />
+          </div>
+        </BackgroundGrid>
+      </DarkModeDetector>
       <Footer />
     </div>
   )
