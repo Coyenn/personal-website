@@ -1,4 +1,11 @@
-h1, h2, h3, h4, h5, h6, p, a {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
     @apply text-zinc-800 dark:text-gray-300;
 }
 
@@ -7,7 +14,11 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 .lead {
-    @apply text-lg
+    @apply text-lg;
+}
+
+.page-heading {
+    @apply text-xl font-semibold;
 }
 
 h1 {
@@ -34,6 +45,7 @@ h6 {
     @apply text-sm font-medium;
 }
 
-a, .link {
+a,
+.link {
     @apply underline decoration-1 underline-offset-4 decoration-zinc-300 hover:decoration-zinc-500 dark:decoration-gray-500 dark:hover:decoration-gray-400 transition-all duration-200;
 }

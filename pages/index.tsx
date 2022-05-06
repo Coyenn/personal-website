@@ -22,10 +22,12 @@ function Home({ allProjects, allPosts }) {
       <main>
         <FadeIn>
           <PageSection>
-            <p className="lead mb-4 md:mb-5">
-              Tim Ritter
-            </p>
-            <p>Creating <em>exciting</em>, <em>inclusive</em>, and <em>accessible</em> user experiences on the world wide web.</p>
+            <h1 className='lead page-heading mb-4 md:mb-5'>
+              <span className="text-gradient bg-gradient-to-r from-indigo-600 to-purple-600">
+                Tim Ritter
+              </span>
+            </h1>
+            <h2 className='text-base font-normal'>Creating <em>exciting</em>, <em>inclusive</em>, and <em>accessible</em> user experiences on the world wide web.</h2>
           </PageSection>
           <PageSection>
             <p className='mb-3 secondary'><small>About Me</small></p>
