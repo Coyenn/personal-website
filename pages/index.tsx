@@ -23,7 +23,7 @@ function Home({ allProjects, allPosts }) {
         <FadeIn>
           <PageSection>
             <h1 className='lead page-heading mb-4 md:mb-5'>
-              <span className="text-gradient bg-gradient-to-r from-indigo-600 to-purple-600">
+              <span className="text-gradient bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500">
                 Tim Ritter
               </span>
             </h1>
