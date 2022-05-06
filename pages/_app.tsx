@@ -9,8 +9,8 @@ function App({ Component, pageProps }) {
     <div className="flex flex-col justify-between min-h-screen bg-gray-50 dark:bg-zinc-900">
       <Head>
         <title>Tim Ritter</title>
-        <meta property='og:title' content='Tim Ritter' />
-        <meta name='twitter:title' content='Tim Ritter' />
+        <meta property='og:title' content='Tim Ritter | Person Website' />
+        <meta name='twitter:title' content='Tim Ritter | Person Website' />
 
         <link rel='canonical' href='https://tim-ritter.com' />
         <meta property='og:url' content='https://tim-ritter.com' />

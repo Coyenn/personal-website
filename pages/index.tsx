@@ -22,10 +22,8 @@ function Home({ allProjects, allPosts }) {
       <main>
         <FadeIn>
           <PageSection>
-            <h1 className='lead page-heading mb-4 md:mb-5'>
-              <span className="text-gradient bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500">
-                Tim Ritter
-              </span>
+            <h1 className='lead page-heading mb-4 md:mb-5 text-gradient bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 inline'>
+              Tim Ritter
             </h1>
             <h2 className='text-base font-normal'>Creating <em>exciting</em>, <em>inclusive</em>, and <em>accessible</em> user experiences on the world wide web.</h2>
           </PageSection>
