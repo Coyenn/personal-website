@@ -7,15 +7,15 @@
 @media (prefers-color-scheme: dark) {
     .background-grid {
         background-image:
-            linear-gradient(to right, rgb(27, 27, 30) 1px, transparent 1px),
-            linear-gradient(to bottom, rgb(27, 27, 30) 1px, transparent 1px);
+            linear-gradient(to right, rgb(30, 30, 33) 1px, transparent 1px),
+            linear-gradient(to bottom, rgb(30, 30, 33) 1px, transparent 1px);
     }
 }
 
 @media (prefers-color-scheme: light) {
     .background-grid {
         background-image:
-            linear-gradient(to right, rgb(246 247 248) 1px, transparent 1px),
-            linear-gradient(to bottom, rgb(246 247 248) 1px, transparent 1px);
+            linear-gradient(to right, rgb(244 245 246) 1px, transparent 1px),
+            linear-gradient(to bottom, rgb(244 245 246) 1px, transparent 1px);
     }
 }
