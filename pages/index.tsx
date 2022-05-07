@@ -4,7 +4,7 @@ import PageSection from '../components/layout/page-section'
 import AllPosts from '../components/posts/all-posts';
 import AllProjects from '../components/projects/all-projects'
 import query from '../lib/cms-query'
-import { ReactJs, Nextdotjs, Tailwindcss, Docker, Typescript, Git } from '@icons-pack/react-simple-icons';
+import { ReactJs, Nextdotjs, Tailwindcss, Docker, Typescript, Git, Visualstudiocode, Gitpod } from '@icons-pack/react-simple-icons';
 
 export async function getStaticProps() {
   const allProjects = (await query('{ allProjects { title, content, link, id, _status } }'))?.allProjects;
@@ -37,7 +37,7 @@ function Home({ allProjects, allPosts }) {
           <PageSection size='xl' className='bg-neutral-950 border-neutral-800 border-b'>
             <Container>
               <p className="text-base text-blue-500 mb-5 md:mb-7 lg:mb-12 text-center font-normal uppercase">Building websites using<br />modern development tools</p>
-              <div className="grid gap-10 grid-cols-3 sm:grid-cols-6">
+              <div className="flex gap-10 justify-center overflow-x-auto">
                 <div className="flex justify-center">
                   <ReactJs color='#ffff' size={50} />
                 </div>
@@ -55,6 +55,12 @@ function Home({ allProjects, allPosts }) {
                 </div>
                 <div className="flex justify-center">
                   <Git color='#ffff' size={50} />
+                </div>
+                <div className="flex justify-center">
+                  <Gitpod color='#ffff' size={50} />
+                </div>
+                <div className="flex justify-center">
+                  <Visualstudiocode color='#ffff' size={50} />
                 </div>
               </div>
             </Container>
