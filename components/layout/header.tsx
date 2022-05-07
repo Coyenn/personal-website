@@ -5,7 +5,7 @@ const links = [
     ['/about', 'About'],
     ['/projects', 'Projects'],
     ['/blog', 'Blog'],
-    ['https://github.com/coyenn/personal-website', 'Source'],
+    ['/contact', 'Contact'],
 ]
 
 interface HeaderState {
@@ -26,8 +26,8 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
 
     render() {
         return (
-            <header className='border-b border-neutral-700 bg-neutral-900/70 fixed top-0 left-0 w-full backdrop-blur-md'>
-                <nav onClick={() => this.toggleOpen()} className={`container mx-auto ${this.state.isOpen === true ? "h-screen" : ""} sm:h-auto`}>
+            <header className='border-b border-neutral-700 bg-neutral-900/70 fixed top-0 left-0 w-full backdrop-blur-md z-50'>
+                <nav onClick={() => this.toggleOpen()} className={`container mx-auto ${this.state.isOpen === true ? "h-screen" : "h-auto"} sm:h-auto`}>
                     <div className="flex flex-col sm:flex-row justify-between sm:px-20">
                         <div className="py-5 flex justify-center relative">
                             <a href="/" className='px-10 no-underline font-semibold text-center text-lg text-white sm:text-neutral-400 sm:text-base sm:font-normal sm:px-0 hover:text-white'>

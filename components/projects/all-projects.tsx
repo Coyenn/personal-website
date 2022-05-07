@@ -1,11 +1,17 @@
 import Project from "./project";
 
+
 function AllProjects({ allProjects }) {
+    let even = false;
+
     return (
-        <div className="py-2 md:py-3">
-            <p className='mb-3 secondary'><small>Projects</small></p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
+        <>
+            <h2 className="text-white text-2xl md:text-3xl lg:text-5xl mb-10 lg:mb-20 text-center">Past and Recent Projects</h2>
+            <div className="relative">
+                <div className="absolute hidden w-px h-full transform -translate-x-1/2 bg-gradient-to-b from-blue-500 via-sky-500 to-purple-600 md:block left-1/2"></div>
                 {allProjects?.map((project) => {
+                    even = !even;
+
                     if (project._status === "published") {
                         return (
                             <Project
@@ -13,12 +19,13 @@ function AllProjects({ allProjects }) {
                                 title={project.title}
                                 content={project.content}
                                 key={project.id}
+                                direction={even === true ? "left" : "right"}
                             />
                         )
                     }
                 })}
             </div>
-        </div>
+        </>
     )
 }
 
