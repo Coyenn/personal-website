@@ -1,32 +1,52 @@
-export default function Header() {
-    return (
-        <footer className='border border-b border-t-0 border-gray-100 dark:border-neutral-800 dark:bg-neutral-900/90 py-5 mt-auto fixed top-0 left-0 w-full backdrop-blur-md'>
-            <div className="container mx-auto poverflow-hidden px-10 sm:px-20">
-                <div className="flex flex-row justify-between">
-                    <a href="/" className='secondary no-underline hover:text-white'>
-                        <small>
-                            Tim Ritter
-                        </small>
-                    </a>
-                    <span>
-                    <a href="https://github.com/coyenn/personal-website" className='secondary no-underline px-2 hover:text-white' target="_blank" rel='noreferrer'>
-                        <small>
-                            Projects
-                        </small>
-                    </a>
-                    <a href="https://github.com/coyenn/personal-website" className='secondary no-underline px-2 hover:text-white' target="_blank" rel='noreferrer'>
-                        <small>
-                            Blog
-                        </small>
-                    </a>
-                    <a href="https://github.com/coyenn/personal-website" className='secondary no-underline px-2 hover:text-white' target="_blank" rel='noreferrer'>
-                        <small>
-                            Source Code
-                        </small>
-                    </a>
-                    </span>
-                </div>
-            </div>
-        </footer>
-    )
+import { MenuAlt1Icon } from "@heroicons/react/outline";
+import React from "react"
+
+const links = [
+    ['/about', 'About'],
+    ['/projects', 'Projects'],
+    ['/blog', 'Blog'],
+    ['https://github.com/coyenn/personal-website', 'Source'],
+]
+
+interface HeaderState {
+    isOpen: boolean;
+}
+
+export default class Header extends React.PureComponent<{}, HeaderState> {
+    constructor(props: {}) {
+        super(props)
+        this.state = {
+            isOpen: false,
+        }
+    }
+
+    private toggleOpen() {
+        this.setState({ isOpen: !this.state.isOpen })
+    }
+
+    render() {
+        return (
+            <header className='border-b border-gray-100 dark:border-neutral-700 dark:bg-neutral-900/70 fixed top-0 left-0 w-full backdrop-blur-md'>
+                <nav onClick={() => this.toggleOpen()} className={`container mx-auto ${this.state.isOpen === true ? "h-screen" : ""} sm:h-auto`}>
+                    <div className="flex flex-col sm:flex-row justify-between sm:px-20">
+                        <div className="py-5 flex justify-center relative">
+                            <a href="/" className='px-10 no-underline font-semibold text-center text-lg text-white sm:text-neutral-400 sm:text-base sm:font-normal sm:px-0 hover:text-white'>
+                                Tim Ritter
+                            </a>
+                            <button onClick={() => this.toggleOpen()} className="absolute right-0 top-0 h-full flex items-center p-5 sm:hidden">
+                                <MenuAlt1Icon className="w-5 h-5 text-white" />
+                            </button>
+                        </div>
+                        <div className={`flex flex-col items-center justify-center sm:flex-row ${this.state.isOpen === false ? "hidden sm:flex" : ""}`}>
+                            {links.map(([href, text]) => (
+                                <a href={href} key={href} className='text-neutral-400 px-10 no-underline py-5 hover:text-white border-t sm:border-0 border-neutral-700 w-full text-center sm:text-sm sm:px-2'>
+                                    {text}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        )
+    }
 }
