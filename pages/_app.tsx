@@ -1,4 +1,3 @@
-import DarkModeDetector from "../components/utility/dark-mode-detector";
 import Head from 'next/head';
 import Footer from "../components/layout/footer";
 import '../styles/globals.scss'
@@ -7,7 +6,7 @@ import Header from "../components/layout/header";
 
 function App({ Component, pageProps }) {
   return (
-    <div className="flex flex-col justify-between min-h-screen bg-gray-50 dark:bg-neutral-900">
+    <div className="flex flex-col justify-between min-h-screen bg-neutral-900">
       <Head>
         <title>Tim Ritter</title>
         <meta property='og:title' content='Tim Ritter | Person Website' />
@@ -25,13 +24,11 @@ function App({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <DarkModeDetector>
-        <BackgroundGrid>
-          <div className="py-10 sm:py-20 lg:py-30">
-            <Component {...pageProps} />
-          </div>
-        </BackgroundGrid>
-      </DarkModeDetector>
+      <BackgroundGrid>
+        <div className="py-10 sm:py-20 lg:py-30">
+          <Component {...pageProps} />
+        </div>
+      </BackgroundGrid>
       <Footer />
     </div>
   )

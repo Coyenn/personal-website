@@ -26,7 +26,7 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
 
     render() {
         return (
-            <header className='border-b border-gray-100 dark:border-neutral-700 dark:bg-neutral-900/70 fixed top-0 left-0 w-full backdrop-blur-md'>
+            <header className='border-b border-neutral-700 bg-neutral-900/70 fixed top-0 left-0 w-full backdrop-blur-md'>
                 <nav onClick={() => this.toggleOpen()} className={`container mx-auto ${this.state.isOpen === true ? "h-screen" : ""} sm:h-auto`}>
                     <div className="flex flex-col sm:flex-row justify-between sm:px-20">
                         <div className="py-5 flex justify-center relative">

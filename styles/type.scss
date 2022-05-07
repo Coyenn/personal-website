@@ -1,5 +1,5 @@
 .secondary {
-    @apply text-neutral-500 dark:text-gray-400;
+    @apply text-gray-400;
 }
 
 .lead {
@@ -36,5 +36,5 @@ h6 {
 
 a,
 .link {
-    @apply underline decoration-1 underline-offset-4 decoration-neutral-300 hover:decoration-neutral-500 dark:decoration-gray-500 dark:hover:decoration-gray-400 transition-all duration-200;
+    @apply underline decoration-1 underline-offset-4 decoration-gray-500 hover:decoration-gray-400 transition-all duration-200;
 }
