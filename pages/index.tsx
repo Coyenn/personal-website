@@ -26,7 +26,7 @@ function Home({ allProjects, allPosts }) {
           <div className='relative overflow-hidden flex justify-center'>
             <Container>
               <PageSection size='2xl' className='border-neutral-800 border-b'>
-                <h1 className="text-white text-4xl md:text-5xl lg:text-6xl xl:text-[5rem] leading-snug text-center mb-10 sm:mb-20 md:mb-32 font-black">
+                <h1 className="text-white text-4xl md:text-5xl lg:text-6xl xl:text-[5rem] leading-tight text-center mb-5 sm:mb-20 md:mb-32 font-semibold">
                   Creating <span className='text-gradient bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500'>exciting</span>, <span className='text-gradient bg-gradient-to-r from-cyan-500 via-sky-500 to-purple-500'>inclusive</span>, and <span className='text-gradient bg-gradient-to-r from-yellow-500 via-green-400 to-emerald-500'>accessible</span> user experiences
                 </h1>
               </PageSection>
@@ -80,7 +80,7 @@ function Home({ allProjects, allPosts }) {
           </PageSection>
           <PageSection size='2xl' className='bg-neutral-900 border-neutral-800 border-b'>
             <Container>
-              <h2 className="text-white text-2xl md:text-3xl lg:text-5xl mb-5 md:mb-7 lg:mb-20 text-center">Blog Posts</h2>
+              <h3 className="text-white text-2xl md:text-3xl lg:text-5xl mb-5 md:mb-7 lg:mb-20 text-center">Blog Posts</h3>
               <AllPosts allPosts={allPosts} />
             </Container>
           </PageSection>
