@@ -8,7 +8,7 @@ import { ReactJs, Nextdotjs, Tailwindcss, Docker, Typescript, Git, Visualstudioc
 
 export async function getStaticProps() {
   const allProjects = (await query('{ allProjects { title, content, link, id, _status } }'))?.allProjects;
-  const allPosts = (await query('{ allBlogPosts { title, content, published, id, _firstPublishedAt, _status } }'))?.allBlogPosts;
+  const allPosts = (await query('{ allBlogPosts { thumbnail { url, alt, width, height }, title, content, published, id, _firstPublishedAt, _status } }'))?.allBlogPosts;
 
   return {
     props: {

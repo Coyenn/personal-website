@@ -2,7 +2,7 @@ import PostPreview from "./post-preview";
 
 function AllPosts({ allPosts }) {
     return (
-        <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-10">
             {allPosts?.map((post) => {
                 if (post.published === true) {
                     return (
@@ -11,6 +11,7 @@ function AllPosts({ allPosts }) {
                             title={post.title}
                             content={post.content}
                             publishedAt={post._firstPublishedAt}
+                            thumbnail={post.thumbnail}
                             key={post.id}
                         />
                     )
