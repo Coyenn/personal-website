@@ -8,7 +8,7 @@ export default function Footer() {
                             Tim Ritter, {new Date().getFullYear().toString()}
                         </small>
                     </p>
-                    <a href="https://github.com/coyenn/personal-website" className='secondary no-underline hover:text-white' target="_blank" rel='noreferrer'>
+                    <a href="https://github.com/coyenn/personal-website" className='secondary no-underline hover:text-white' target="_blank" rel="noreferrer">
                         <small>
                             Source Code
                         </small>

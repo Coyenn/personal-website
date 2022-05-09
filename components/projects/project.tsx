@@ -27,7 +27,7 @@ export default function Project(props: Project) {
                 {props.direction === "left" ? (
                     <span className='hidden sm:flex'></span>
                 ) : ""}
-                <a href={props.link} target={"_blank"} rel="_noreferrer" ref={ref} className="bg-neutral-900 border border-neutral-800 p-10 rounded-lg shadow-lg hover:shadow-xl transition-all no-underline hover:scale-105 hover:border-neutral-600 relative overflow-hidden">
+                <a href={props.link} target={"_blank"} rel="noreferrer" ref={ref} className="bg-neutral-900 border border-neutral-800 p-10 rounded-lg shadow-lg hover:shadow-xl transition-all no-underline hover:scale-105 hover:border-neutral-600 relative overflow-hidden">
                     <p className="text-white text-base sm:text-lg md:text-xl mb-2 md:mb-7">{props.title}</p>
                     <p className="text-gray-400">
                         {props.content}

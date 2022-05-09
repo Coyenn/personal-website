@@ -1,5 +1,6 @@
 import { MenuAlt1Icon } from "@heroicons/react/outline";
 import React from "react"
+import Link from "next/link";
 
 const links = [
     ['/about', 'About'],
@@ -30,9 +31,11 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                 <nav onClick={() => this.toggleOpen()} className={`container mx-auto ${this.state.isOpen === true ? "h-screen" : "h-auto"} sm:h-auto`}>
                     <div className="flex flex-col sm:flex-row justify-between sm:px-20">
                         <div className="py-5 flex justify-center relative">
-                            <a href="/" className='px-10 no-underline font-semibold text-center text-lg text-white sm:text-neutral-400 sm:text-base sm:font-normal sm:px-0 hover:text-white'>
-                                Tim Ritter
-                            </a>
+                            <Link href="/">
+                                <a className='px-10 no-underline font-semibold text-center text-lg text-white sm:text-neutral-400 sm:text-base sm:font-normal sm:px-0 hover:text-white'>
+                                    Tim Ritter
+                                </a>
+                            </Link>
                             <button onClick={() => this.toggleOpen()} className="absolute right-0 top-0 h-full flex items-center p-5 sm:hidden">
                                 <MenuAlt1Icon className="w-5 h-5 text-white" />
                             </button>
