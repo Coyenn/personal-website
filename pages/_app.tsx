@@ -39,7 +39,7 @@ function App({ Component, pageProps }) {
             </Head>
             <Header />
             <BackgroundGrid>
-                <div className="lg:py-30 py-10 sm:py-20">
+                <div className="lg:pt-30 pt-10 sm:pt-20">
                     <Component {...pageProps} />
                 </div>
             </BackgroundGrid>

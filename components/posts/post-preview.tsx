@@ -29,13 +29,13 @@ function formatDate(date) {
 
 export default function PostPreview(props: Post) {
     return (
-        <Link href={`/post/${props.id}`} passHref={true}>
-            <a>
-                <p className="flex flex-col items-start">
+        <span className="mx-auto block">
+            <Link href={`/post/${props.id}`} passHref={true}>
+                <a className="mb-8 flex flex-col items-center rounded-xl border border-neutral-800 bg-neutral-800 shadow-lg transition-all hover:scale-105 hover:border-neutral-600 hover:shadow-xl sm:items-start">
                     {props.thumbnail && props.thumbnail.url !== undefined ? (
                         <p className="mb-2 md:mb-4">
                             <Image
-                                className="overflow-hidden rounded-xl"
+                                className="w-full rounded-t-xl"
                                 src={props.thumbnail?.url}
                                 alt={props.thumbnail?.alt}
                                 width={props.thumbnail?.width}
@@ -45,14 +45,16 @@ export default function PostPreview(props: Post) {
                     ) : (
                         ""
                     )}
-                    <p className="secondary mb-2 md:mb-0">
-                        {formatDate(new Date(props.publishedAt))}
-                    </p>
-                    <p className="text-base text-white hover:underline sm:text-lg md:mr-5 md:text-xl">
-                        {props.title}
-                    </p>
-                </p>
-            </a>
-        </Link>
+                    <span className="flex flex-col justify-between px-4 pb-4">
+                        <p className="mb-6 text-center text-xl text-white hover:underline sm:text-left sm:text-xl md:text-2xl">
+                            {props.title}
+                        </p>
+                        <p className="secondary text-center sm:text-left">
+                            {formatDate(new Date(props.publishedAt))}
+                        </p>
+                    </span>
+                </a>
+            </Link>
+        </span>
     );
 }

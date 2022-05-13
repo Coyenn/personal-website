@@ -17,7 +17,9 @@ import {
 
 export async function getStaticProps() {
     const allProjects = (
-        await query("{ allProjects { title, content, link, id, _status } }")
+        await query(
+            "{ allProjects { icon { url, alt }, title, content, link, id, _status } }"
+        )
     )?.allProjects;
     const allPosts = (
         await query(
@@ -72,29 +74,15 @@ function Home({ allProjects, allPosts }) {
                             <br />
                             modern development tools
                         </p>
-                        <div className="flex justify-center gap-10 overflow-x-auto">
-                            <div className="flex justify-center">
+                        <div className="mx-auto">
+                            <div className="flex justify-center gap-2 overflow-x-auto sm:gap-5 md:gap-10">
                                 <ReactJs color="#ffff" size={50} />
-                            </div>
-                            <div className="flex justify-center">
                                 <Nextdotjs color="#ffff" size={50} />
-                            </div>
-                            <div className="flex justify-center">
                                 <Tailwindcss color="#ffff" size={50} />
-                            </div>
-                            <div className="flex justify-center">
                                 <Docker color="#ffff" size={50} />
-                            </div>
-                            <div className="flex justify-center">
                                 <Typescript color="#ffff" size={50} />
-                            </div>
-                            <div className="flex justify-center">
                                 <Git color="#ffff" size={50} />
-                            </div>
-                            <div className="flex justify-center">
                                 <Gitpod color="#ffff" size={50} />
-                            </div>
-                            <div className="flex justify-center">
                                 <Visualstudiocode color="#ffff" size={50} />
                             </div>
                         </div>
@@ -105,7 +93,7 @@ function Home({ allProjects, allPosts }) {
                     className="border-b border-neutral-800 bg-neutral-900"
                 >
                     <Container>
-                        <h3 className="mb-5 text-2xl text-white md:mb-7 md:text-3xl lg:text-5xl">
+                        <h3 className="mb-10 text-center text-2xl text-white md:text-3xl lg:mb-20 lg:text-5xl">
                             About Me
                         </h3>
                         <h2 className="text-base font-normal text-gray-400 md:text-xl">
@@ -129,6 +117,9 @@ function Home({ allProjects, allPosts }) {
                     className="border-b border-neutral-800 bg-neutral-950"
                 >
                     <Container>
+                        <h3 className="mb-10 text-center text-2xl text-white md:text-3xl lg:mb-20 lg:text-5xl">
+                            Past and Recent Projects
+                        </h3>
                         <AllProjects allProjects={allProjects} />
                     </Container>
                 </PageSection>
@@ -137,7 +128,7 @@ function Home({ allProjects, allPosts }) {
                     className="border-b border-neutral-800 bg-neutral-900"
                 >
                     <Container>
-                        <h3 className="mb-5 text-center text-2xl text-white md:mb-7 md:text-3xl lg:mb-20 lg:text-5xl">
+                        <h3 className="mb-10 text-center text-2xl text-white md:text-3xl lg:mb-20 lg:text-5xl">
                             Blog Posts
                         </h3>
                         <AllPosts allPosts={allPosts} />

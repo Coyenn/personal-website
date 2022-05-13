@@ -9,7 +9,8 @@ module.exports = {
                 sm: "100%",
                 md: "100%",
                 lg: "700px",
-                xl: "750px",
+                xl: "850px",
+                xxl: "1000px",
             },
         },
         fontSize: {

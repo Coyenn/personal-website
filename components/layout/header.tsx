@@ -34,7 +34,7 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                         this.state.isOpen === true ? "h-screen" : "h-auto"
                     } sm:h-auto`}
                 >
-                    <div className="flex flex-col justify-between sm:flex-row sm:px-20">
+                    <div className="flex flex-col justify-between sm:flex-row">
                         <div className="relative flex justify-center py-5">
                             <Link href="/">
                                 <a className="px-10 text-center text-lg font-semibold text-white no-underline hover:text-white sm:px-0 sm:text-base sm:font-normal sm:text-neutral-400">

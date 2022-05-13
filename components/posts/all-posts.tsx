@@ -1,4 +1,5 @@
 import PostPreview from "./post-preview";
+import Fade from "react-reveal/Fade";
 
 function AllPosts({ allPosts }) {
     return (
@@ -6,14 +7,21 @@ function AllPosts({ allPosts }) {
             {allPosts?.map((post) => {
                 if (post.published === true) {
                     return (
-                        <PostPreview
-                            id={post.id}
-                            title={post.title}
-                            content={post.content}
-                            publishedAt={post._firstPublishedAt}
-                            thumbnail={post.thumbnail}
-                            key={post.id}
-                        />
+                        <Fade
+                            bottom
+                            delay={300}
+                            duration={500}
+                            distance={"50px"}
+                        >
+                            <PostPreview
+                                id={post.id}
+                                title={post.title}
+                                content={post.content}
+                                publishedAt={post._firstPublishedAt}
+                                thumbnail={post.thumbnail}
+                                key={post.id}
+                            />
+                        </Fade>
                     );
                 }
             })}
