@@ -9,6 +9,7 @@ import React from "react";
 interface BlogPostProps {
     id: string,
     token: string,
+    post: Post,
 }
 
 interface Post {
@@ -22,7 +23,6 @@ interface Post {
 interface BlogPostState {
     loading: boolean,
     id: undefined | string,
-    post: undefined | Post,
 }
 
 class PostView extends React.Component<BlogPostProps, BlogPostState>{
@@ -31,7 +31,6 @@ class PostView extends React.Component<BlogPostProps, BlogPostState>{
         this.state = {
             loading: true,
             id: undefined,
-            post: undefined,
         }
     }
 
@@ -40,12 +39,9 @@ class PostView extends React.Component<BlogPostProps, BlogPostState>{
     }
 
     async loadPost() {
-        const post = (await query(`{blogPost(filter: {id: {eq: "${this.props.id}"}}) { id, title, content, published, _status, _firstPublishedAt }}`, this.props.token))?.blogPost;
-
         this.setState({
             loading: false,
             id: this.props.id.toString(),
-            post: post,
         })
     }
 
@@ -64,22 +60,22 @@ class PostView extends React.Component<BlogPostProps, BlogPostState>{
                                         </a>
                                     </Link>
                                 </div>
-                                {this.state.post?.title !== undefined && this.state.post?.published === true ? (
+                                {this.props.post?.title !== undefined && this.props.post?.published === true ? (
                                     <FadeIn>
                                         <div className="flex justify-between flex-col md:flex-row">
-                                            <p className="lead mb-4 md:mb-5">
-                                                {this.state.post?.title}
-                                            </p>
+                                            <h1 className="lead font-normal mb-4 md:mb-5">
+                                                {this.props.post?.title}
+                                            </h1>
                                             <p className="secondary order-first md:order-last mb-2 md:mb-0">
                                                 <small>
                                                     <span className="sr-only">This blog post was first published on</span>
-                                                    {this.state.post?._firstPublishedAt.split("T")[0]}
+                                                    {this.props.post?._firstPublishedAt.split("T")[0]}
                                                 </small>
                                             </p>
                                         </div>
                                         <div className="prose dark:prose-invert">
                                             <ReactMarkdown>
-                                                {this.state.post?.content}
+                                                {this.props.post?.content}
                                             </ReactMarkdown>
                                         </div>
                                     </FadeIn>
@@ -93,18 +89,26 @@ class PostView extends React.Component<BlogPostProps, BlogPostState>{
     }
 }
 
+/**
+ * Statically generated props at build time
+ */
 export async function getStaticProps(context) {
     const id = context.params.id;
     const token = process.env.DATO_API_KEY;
+    const post = (await query(`{blogPost(filter: {id: {eq: "${id}"}}) { id, title, content, published, _status, _firstPublishedAt }}`, token))?.blogPost;
 
     return {
         props: {
             id,
             token,
+            post,
         }
     }
 }
 
+/**
+ * Used for Static Site Generation at build time 
+ */
 export async function getStaticPaths() {
     const allPosts = (await query('{allBlogPosts {id}}'))?.allBlogPosts;
     const allPostIds = allPosts.map((post) => `/post/${post.id.toString()}`);
