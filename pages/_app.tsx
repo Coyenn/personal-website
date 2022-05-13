@@ -8,14 +8,16 @@ function App({ Component, pageProps }) {
     return (
         <div className="flex min-h-screen flex-col justify-between bg-neutral-900">
             <Head>
-                <title>Tim Ritter</title>
+                <title>
+                    Tim Ritter - Frontend Developer | Personal Website
+                </title>
                 <meta
                     property="og:title"
-                    content="Tim Ritter | Person Website"
+                    content="Tim Ritter - Frontend Developer | Personal Website"
                 />
                 <meta
                     name="twitter:title"
-                    content="Tim Ritter | Person Website"
+                    content="Tim Ritter - Frontend Developer | Personal Website"
                 />
 
                 <link rel="canonical" href="https://tim-ritter.com" />

@@ -48,7 +48,7 @@ export default function PostPreview(props: Post) {
                     <p className="secondary mb-2 md:mb-0">
                         {formatDate(new Date(props.publishedAt))}
                     </p>
-                    <p className="text-base text-white sm:text-lg md:mr-5 md:text-xl">
+                    <p className="text-base text-white hover:underline sm:text-lg md:mr-5 md:text-xl">
                         {props.title}
                     </p>
                 </p>
