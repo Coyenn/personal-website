@@ -31,7 +31,7 @@ export default function PostPreview(props: Post) {
     return (
         <span className="mx-auto block">
             <Link href={`/post/${props.id}`} passHref={true}>
-                <a className="mb-8 flex flex-col items-center rounded-xl border border-neutral-800 bg-neutral-800 shadow-lg transition-all hover:scale-105 hover:border-neutral-600 hover:shadow-xl sm:items-start">
+                <a className="mb-8 flex flex-col items-center rounded-xl border border-neutral-800 bg-neutral-800 shadow-lg transition-all hover:border-neutral-600 hover:shadow-xl sm:items-start">
                     {props.thumbnail && props.thumbnail.url !== undefined ? (
                         <p className="mb-2 md:mb-4">
                             <Image
@@ -46,7 +46,7 @@ export default function PostPreview(props: Post) {
                         ""
                     )}
                     <span className="flex flex-col justify-between px-4 pb-4">
-                        <p className="mb-6 text-center text-xl text-white hover:underline sm:text-left sm:text-xl md:text-2xl">
+                        <p className="mb-6 text-center text-xl text-white sm:text-left sm:text-xl md:text-2xl">
                             {props.title}
                         </p>
                         <p className="secondary text-center sm:text-left">
