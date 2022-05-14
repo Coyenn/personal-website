@@ -3,10 +3,11 @@ import Footer from "../components/layout/footer";
 import "../styles/globals.scss";
 import BackgroundGrid from "../components/utility/background-grid";
 import Header from "../components/layout/header";
+import DarkModeDetector from "../components/utility/dark-mode-detector";
 
 function App({ Component, pageProps }) {
     return (
-        <div className="flex min-h-screen flex-col justify-between bg-neutral-900">
+        <div className="flex min-h-screen flex-col justify-between bg-white dark:bg-neutral-900">
             <Head>
                 <title>
                     Tim Ritter - Frontend Developer | Personal Website
@@ -37,13 +38,15 @@ function App({ Component, pageProps }) {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Header />
-            <BackgroundGrid>
-                <div className="lg:pt-30 pt-10 sm:pt-20">
-                    <Component {...pageProps} />
-                </div>
-            </BackgroundGrid>
-            <Footer />
+            <DarkModeDetector>
+                <Header />
+                <BackgroundGrid>
+                    <div className="lg:pt-30 pt-10 sm:pt-20">
+                        <Component {...pageProps} />
+                    </div>
+                </BackgroundGrid>
+                <Footer />
+            </DarkModeDetector>
         </div>
     );
 }

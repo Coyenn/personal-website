@@ -1,8 +1,13 @@
-.background-grid {
-    background-size: 40px 40px;
-    background-image: none;
-    transition: background-image 2s ease-in-out;
-    background-image:
-        linear-gradient(to right, rgb(33, 33, 36) 1px, transparent 1px),
-        linear-gradient(to bottom, rgb(33, 33, 36) 1px, transparent 1px);
+.dark {
+    .background-grid {
+        background-size: 40px 40px;
+        background-image: none;
+        transition: background-image 2s ease-in-out;
+        background-image: linear-gradient(
+                to right,
+                rgb(33, 33, 36) 1px,
+                transparent 1px
+            ),
+            linear-gradient(to bottom, rgb(33, 33, 36) 1px, transparent 1px);
+    }
 }

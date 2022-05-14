@@ -1,6 +1,8 @@
 import { MenuAlt1Icon } from "@heroicons/react/outline";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import TRLogoNew from "../../public/TRLogoNew.svg";
 
 const links = [
     ["/about", "About"],
@@ -27,7 +29,7 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
 
     render() {
         return (
-            <header className="fixed top-0 left-0 z-50 w-full border-b border-neutral-700 bg-neutral-900/70 backdrop-blur-md">
+            <header className="fixed top-0 left-0 z-50 w-full border-b border-neutral-100 bg-white/70 backdrop-blur-md dark:border-neutral-700 dark:bg-neutral-900/70">
                 <nav
                     onClick={() => this.toggleOpen()}
                     className={`container mx-auto ${
@@ -35,17 +37,24 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                     } sm:h-auto`}
                 >
                     <div className="flex flex-col justify-between sm:flex-row">
-                        <div className="relative flex justify-center py-5">
+                        <div className="relative flex justify-center py-5 xl:py-7">
                             <Link href="/">
-                                <a className="px-10 text-center text-lg font-semibold text-white no-underline hover:text-white sm:px-0 sm:text-base sm:font-normal sm:text-neutral-400">
-                                    Tim Ritter
+                                <a
+                                    className="flex items-center"
+                                    aria-label="The logo of tim-ritter.com"
+                                >
+                                    <Image
+                                        src={TRLogoNew}
+                                        width={30}
+                                        height={30}
+                                    />
                                 </a>
                             </Link>
                             <button
                                 onClick={() => this.toggleOpen()}
                                 className="absolute right-0 top-0 flex h-full items-center p-5 sm:hidden"
                             >
-                                <MenuAlt1Icon className="h-5 w-5 text-white" />
+                                <MenuAlt1Icon className="h-5 w-5 text-black dark:text-white" />
                             </button>
                         </div>
                         <div
@@ -59,7 +68,7 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                                 <a
                                     href={href}
                                     key={href}
-                                    className="w-full border-t border-neutral-700 px-10 py-5 text-center text-neutral-400 no-underline hover:text-white sm:border-0 sm:px-2 sm:text-sm"
+                                    className="w-full border-t border-neutral-100 px-10 py-5 text-center text-neutral-400 no-underline hover:text-black dark:border-neutral-700 dark:text-white sm:border-0 sm:px-2 sm:text-sm"
                                 >
                                     {text}
                                 </a>

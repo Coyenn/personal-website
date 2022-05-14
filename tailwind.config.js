@@ -31,6 +31,7 @@ module.exports = {
             },
             colors: {
                 neutral: {
+                    50: "#fcfcfc",
                     950: "#0a0a0a",
                 },
             },
@@ -40,4 +41,5 @@ module.exports = {
         },
     },
     plugins: ["postcss-import", require("@tailwindcss/typography")],
+    darkMode: "class",
 };

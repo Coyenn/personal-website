@@ -4,6 +4,7 @@ import PageSection from "../components/layout/page-section";
 import AllPosts from "../components/posts/all-posts";
 import AllProjects from "../components/projects/all-projects";
 import query from "../lib/cms-query";
+import TRLogoNew from "../public/TRLogoNew.svg";
 import {
     ReactJs,
     Nextdotjs,
@@ -14,16 +15,17 @@ import {
     Visualstudiocode,
     Gitpod,
 } from "@icons-pack/react-simple-icons";
+import Image from "next/image";
 
 export async function getStaticProps() {
     const allProjects = (
         await query(
-            "{ allProjects { icon { url, alt }, title, content, link, id, _status } }"
+            "{ allProjects { icon { url, alt }, title, content, website, repository, id, _status } }"
         )
     )?.allProjects;
     const allPosts = (
         await query(
-            "{ allBlogPosts { thumbnail { url, alt, width, height }, title, content, published, id, _firstPublishedAt, _status } }"
+            "{ allBlogPosts { thumbnail { url, alt, width, height }, teaser, title, content, published, id, _firstPublishedAt, _status } }"
         )
     )?.allBlogPosts;
 
@@ -39,34 +41,30 @@ function Home({ allProjects, allPosts }) {
     return (
         <main>
             <FadeIn>
-                <div className="relative flex justify-center overflow-hidden">
-                    <Container>
-                        <PageSection
-                            size="2xl"
-                            className="border-b border-neutral-800"
-                        >
-                            <h1 className="mb-5 text-center text-4xl font-semibold leading-tight text-white sm:mb-20 md:mb-32 md:text-5xl lg:text-6xl xl:text-[5rem]">
-                                Creating{" "}
-                                <span className="text-gradient bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500">
-                                    exciting
-                                </span>
-                                ,{" "}
-                                <span className="text-gradient bg-gradient-to-r from-cyan-500 via-sky-500 to-purple-500">
-                                    inclusive
-                                </span>
-                                , and{" "}
-                                <span className="text-gradient bg-gradient-to-r from-yellow-500 via-green-400 to-emerald-500">
-                                    accessible
-                                </span>{" "}
-                                user experiences
+                <div className="relative flex justify-center overflow-hidden border-b border-neutral-200 dark:border-neutral-800">
+                    <PageSection size="2xl">
+                        <Container>
+                            <div className="mb-4 hidden justify-center sm:mb-6 md:mb-8 md:flex lg:mb-10">
+                                <Image
+                                    src={TRLogoNew}
+                                    width={150}
+                                    height={150}
+                                />
+                            </div>
+                            <h1 className="text-center text-4xl font-medium leading-tight text-black dark:text-white md:mb-32 md:text-5xl lg:text-6xl xl:text-[5rem] 2xl:text-[6rem]">
+                                Creating
+                                <br />
+                                User
+                                <br />
+                                Experiences
+                                <br />
                             </h1>
-                        </PageSection>
-                    </Container>
-                    <div className="absolute bottom-0 h-full w-[750px] translate-y-1/2 bg-gradient-radial from-blue-500/10 via-transparent to-transparent sm:w-[1000px] md:w-[2000px] xl:w-[3000px]"></div>
+                        </Container>
+                    </PageSection>
                 </div>
                 <PageSection
                     size="xl"
-                    className="border-b border-neutral-800 bg-neutral-950"
+                    className="border-b border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950"
                 >
                     <Container>
                         <p className="mb-5 text-center text-base font-normal uppercase text-blue-500 md:mb-7 lg:mb-12">
@@ -76,24 +74,39 @@ function Home({ allProjects, allPosts }) {
                         </p>
                         <div className="mx-auto">
                             <div className="flex justify-center gap-2 overflow-x-auto sm:gap-5 md:gap-10">
-                                <ReactJs color="#ffff" size={50} />
-                                <Nextdotjs color="#ffff" size={50} />
-                                <Tailwindcss color="#ffff" size={50} />
-                                <Docker color="#ffff" size={50} />
-                                <Typescript color="#ffff" size={50} />
-                                <Git color="#ffff" size={50} />
-                                <Gitpod color="#ffff" size={50} />
-                                <Visualstudiocode color="#ffff" size={50} />
+                                <ReactJs
+                                    className="technology-icon"
+                                    size={50}
+                                />
+                                <Nextdotjs
+                                    className="technology-icon"
+                                    size={50}
+                                />
+                                <Tailwindcss
+                                    className="technology-icon"
+                                    size={50}
+                                />
+                                <Docker className="technology-icon" size={50} />
+                                <Typescript
+                                    className="technology-icon"
+                                    size={50}
+                                />
+                                <Git className="technology-icon" size={50} />
+                                <Gitpod className="technology-icon" size={50} />
+                                <Visualstudiocode
+                                    className="technology-icon"
+                                    size={50}
+                                />
                             </div>
                         </div>
                     </Container>
                 </PageSection>
                 <PageSection
                     size="2xl"
-                    className="border-b border-neutral-800 bg-neutral-900"
+                    className="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900"
                 >
                     <Container>
-                        <h3 className="mb-10 text-center text-2xl text-white md:text-3xl lg:mb-20 lg:text-5xl">
+                        <h3 className="mb-10 text-center text-2xl text-black dark:text-white md:text-3xl lg:mb-20 lg:text-5xl">
                             About Me
                         </h3>
                         <h2 className="text-base font-normal text-gray-400 md:text-xl">
@@ -114,10 +127,10 @@ function Home({ allProjects, allPosts }) {
                 </PageSection>
                 <PageSection
                     size="2xl"
-                    className="border-b border-neutral-800 bg-neutral-950"
+                    className="border-b border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950"
                 >
                     <Container>
-                        <h3 className="mb-10 text-center text-2xl text-white md:text-3xl lg:mb-20 lg:text-5xl">
+                        <h3 className="mb-10 text-center text-2xl text-black dark:text-white md:text-3xl lg:mb-20 lg:text-5xl">
                             Past and Recent Projects
                         </h3>
                         <AllProjects allProjects={allProjects} />
@@ -125,10 +138,10 @@ function Home({ allProjects, allPosts }) {
                 </PageSection>
                 <PageSection
                     size="2xl"
-                    className="border-b border-neutral-800 bg-neutral-900"
+                    className="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900"
                 >
                     <Container>
-                        <h3 className="mb-10 text-center text-2xl text-white md:text-3xl lg:mb-20 lg:text-5xl">
+                        <h3 className="mb-10 text-center text-2xl text-black dark:text-white md:text-3xl lg:mb-20 lg:text-5xl">
                             Blog Posts
                         </h3>
                         <AllPosts allPosts={allPosts} />

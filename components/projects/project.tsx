@@ -2,17 +2,12 @@ import useMouse from "@react-hook/mouse-position";
 import Image from "next/image";
 import * as React from "react";
 
-interface ProjectIcon {
-    url: string;
-    alt: string;
-}
-
 interface Project {
     title: string;
     content: string;
-    link: string;
+    website: string;
+    repository: string;
     direction: string;
-    icon: ProjectIcon;
 }
 
 export default function Project(props: Project) {
@@ -24,32 +19,40 @@ export default function Project(props: Project) {
                 ""
             )}
             <a
-                href={props.link}
+                href={props.website || props.repository}
                 target={"_blank"}
                 rel="noreferrer"
-                className="relative block overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900 p-5 no-underline shadow-lg transition-shadow hover:border-neutral-600 hover:shadow-xl lg:p-8"
+                className="flex flex-col gap-5 rounded-lg border border-neutral-200 bg-white p-5 no-underline hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-600 lg:gap-8 lg:p-8"
             >
-                <div className="mb-4 flex flex-row items-center justify-between md:mb-7">
-                    <p className="text-lg text-white sm:text-lg lg:text-2xl">
-                        {props.title}
-                    </p>
-                    <div className="h-8 w-8 md:h-16 md:w-16">
-                        <Image
-                            src={props.icon.url}
-                            width={"100%"}
-                            height={"100%"}
-                            alt={props.icon.alt}
-                        />
-                    </div>
-                </div>
-                <p className="mb-6 text-gray-400 lg:text-xl">{props.content}</p>
+                <p className="text-lg text-black dark:text-white sm:text-lg lg:text-2xl">
+                    {props.title}
+                </p>
+                <p className="text-gray-400 lg:text-xl">{props.content}</p>
                 <div className="flex flex-row gap-5">
-                    <p className="rounded bg-blue-600 px-3 py-2 text-center text-white transition-colors hover:bg-blue-500">
-                        Visit Website
-                    </p>
-                    <p className="rounded border border-neutral-600 bg-transparent px-3 py-2 text-center font-light text-neutral-400 transition-colors hover:border-neutral-500 hover:text-neutral-300">
-                        Repositroy
-                    </p>
+                    {props.website && props.website !== "" ? (
+                        <a
+                            href={props.website}
+                            target={"_blank"}
+                            rel={"noreferrer"}
+                            className="rounded bg-blue-600 px-3 py-2 text-center text-white transition-colors hover:bg-blue-500"
+                        >
+                            Visit Website
+                        </a>
+                    ) : (
+                        ""
+                    )}
+                    {props.repository && props.repository !== "" ? (
+                        <a
+                            href={props.repository}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="rounded border border-neutral-200 bg-transparent px-3 py-2 text-center font-light text-neutral-400 transition-colors hover:border-neutral-300 hover:text-neutral-500 dark:border-neutral-600 dark:hover:text-neutral-300"
+                        >
+                            Repositroy
+                        </a>
+                    ) : (
+                        ""
+                    )}
                 </div>
             </a>
             {props.direction !== "left" ? <span></span> : ""}
