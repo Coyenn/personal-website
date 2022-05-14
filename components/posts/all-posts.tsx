@@ -8,7 +8,7 @@ function AllPosts({ allPosts }) {
     return (
         <>
             <div className="mb-10 md:mb-20">
-                <Fade bottom delay={300} duration={500} distance={"50px"}>
+                <Fade bottom duration={500} distance={"50px"}>
                     <Post
                         id={firstPost.id}
                         title={firstPost.title}
@@ -31,7 +31,6 @@ function AllPosts({ allPosts }) {
                                 {postNumber !== 1 ? (
                                     <Fade
                                         bottom
-                                        delay={300}
                                         duration={500}
                                         distance={"50px"}
                                         key={post.id}

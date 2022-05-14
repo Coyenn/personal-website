@@ -14,12 +14,7 @@ function AllProjects({ allProjects }) {
                     if (project._status === "published") {
                         return (
                             <div className="md:py-20" key={project.id}>
-                                <Fade
-                                    bottom
-                                    delay={300}
-                                    duration={500}
-                                    distance={"50px"}
-                                >
+                                <Fade bottom duration={500} distance={"50px"}>
                                     <Project
                                         website={project.website}
                                         repository={project.repository}
