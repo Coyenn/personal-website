@@ -1,38 +1,54 @@
-import DarkModeDetector from "../components/utility/dark-mode-detector";
-import Head from 'next/head';
+import Head from "next/head";
 import Footer from "../components/layout/footer";
-import '../styles/globals.scss'
+import "../styles/globals.scss";
 import BackgroundGrid from "../components/utility/background-grid";
+import Header from "../components/layout/header";
+import DarkModeDetector from "../components/utility/dark-mode-detector";
 
 function App({ Component, pageProps }) {
-  return (
-    <div className="flex flex-col justify-between min-h-screen bg-gray-50 dark:bg-zinc-900">
-      <Head>
-        <title>Tim Ritter</title>
-        <meta property='og:title' content='Tim Ritter | Person Website' />
-        <meta name='twitter:title' content='Tim Ritter | Person Website' />
+    return (
+        <div className="flex min-h-screen flex-col justify-between bg-white dark:bg-neutral-900">
+            <Head>
+                <title>
+                    Tim Ritter - Frontend Developer | Personal Website
+                </title>
+                <meta
+                    property="og:title"
+                    content="Tim Ritter - Frontend Developer | Personal Website"
+                />
+                <meta
+                    name="twitter:title"
+                    content="Tim Ritter - Frontend Developer | Personal Website"
+                />
 
-        <link rel='canonical' href='https://tim-ritter.com' />
-        <meta property='og:url' content='https://tim-ritter.com' />
-        <meta name='twitter:url' content='https://tim-ritter.com' />
+                <link rel="canonical" href="https://tim-ritter.com" />
+                <meta property="og:url" content="https://tim-ritter.com" />
+                <meta name="twitter:url" content="https://tim-ritter.com" />
 
-        <meta property="og:image" content="/logo.png" />
-        <meta name="twitter:image" content="/logo.png" />
-        <meta property="og:description" content="Hey there! I'm Tim, a 17-year-old trainee Software Developer from Germany." />
+                <meta property="og:image" content="/logo.png" />
+                <meta name="twitter:image" content="/logo.png" />
+                <meta
+                    property="og:description"
+                    content="Hey there! I'm Tim, a 17-year-old trainee Software Developer from Germany."
+                />
 
-        <meta name="description" content="Hey there! I'm Tim, a 17-year-old trainee Software Developer from Germany." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <DarkModeDetector>
-        <BackgroundGrid>
-          <div className="container mx-auto py-10 sm:py-20 lg:py-30 px-10 sm:px-20 overflow-hidden">
-            <Component {...pageProps} />
-          </div>
-        </BackgroundGrid>
-      </DarkModeDetector>
-      <Footer />
-    </div>
-  )
+                <meta
+                    name="description"
+                    content="Hey there! I'm Tim, a 17-year-old trainee Software Developer from Germany."
+                />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <DarkModeDetector>
+                <Header />
+                <BackgroundGrid>
+                    <div className="lg:pt-30 pt-10 sm:pt-20">
+                        <Component {...pageProps} />
+                    </div>
+                </BackgroundGrid>
+                <Footer />
+            </DarkModeDetector>
+        </div>
+    );
 }
 
-export default App
+export default App;

@@ -1,0 +1,9 @@
+.technology-icon {
+    @apply fill-neutral-800;
+}
+
+.dark {
+    .technology-icon {
+        fill: white;
+    }
+}

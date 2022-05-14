@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  }
-}
+    reactStrictMode: true,
+    images: {
+        domains: ["www.datocms-assets.com"],
+        loader: "akamai",
+        path: "",
+    },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
