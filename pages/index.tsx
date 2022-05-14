@@ -52,11 +52,11 @@ function Home({ allProjects, allPosts }) {
                                 />
                             </div>
                             <h1 className="text-center text-4xl font-medium leading-tight text-black dark:text-white md:mb-32 md:text-5xl lg:text-6xl xl:text-[5rem] 2xl:text-[6rem]">
-                                Creating
+                                Designer
                                 <br />
-                                User
+                                Programmer
                                 <br />
-                                Experiences
+                                Thinker
                                 <br />
                             </h1>
                         </Container>

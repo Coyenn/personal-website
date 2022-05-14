@@ -7,18 +7,20 @@ function AllPosts({ allPosts }) {
 
     return (
         <>
-            <Fade bottom delay={300} duration={500} distance={"50px"}>
-                <Post
-                    id={firstPost.id}
-                    title={firstPost.title}
-                    content={firstPost.content}
-                    publishedAt={firstPost._firstPublishedAt}
-                    thumbnail={firstPost.thumbnail}
-                    key={firstPost.id}
-                    size={"large"}
-                    teaser={firstPost.teaser}
-                />
-            </Fade>
+            <div className="mb-5 md:mb-10">
+                <Fade bottom delay={300} duration={500} distance={"50px"}>
+                    <Post
+                        id={firstPost.id}
+                        title={firstPost.title}
+                        content={firstPost.content}
+                        publishedAt={firstPost._firstPublishedAt}
+                        thumbnail={firstPost.thumbnail}
+                        key={firstPost.id}
+                        size={"large"}
+                        teaser={firstPost.teaser}
+                    />
+                </Fade>
+            </div>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-10">
                 {allPosts?.map((post) => {
                     postNumber++;

@@ -5,10 +5,8 @@ import Image from "next/image";
 import TRLogoNew from "../../public/TRLogoNew.svg";
 
 const links = [
-    ["/about", "About"],
-    ["/projects", "Projects"],
-    ["/blog", "Blog"],
-    ["/contact", "Contact"],
+    ["https://github.com/coyenn", "GitHub"],
+    ["https://twitter.com/kojenia", "Twitter"],
 ];
 
 interface HeaderState {
@@ -48,6 +46,12 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                                         width={30}
                                         height={30}
                                     />
+                                    <a
+                                        href={"/"}
+                                        className="w-full pl-2 text-center text-neutral-400 no-underline hover:text-black dark:text-white sm:border-0 sm:text-sm"
+                                    >
+                                        Tim Ritter
+                                    </a>
                                 </a>
                             </Link>
                             <button

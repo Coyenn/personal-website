@@ -34,7 +34,7 @@ export default function Post(props: Post) {
     return (
         <span className="mx-auto block">
             <Link href={`/post/${props.id}`} passHref={true}>
-                <a className="mb-8 flex flex-col items-center rounded-lg border border-neutral-200 bg-white transition-all hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800 dark:hover:border-neutral-600 sm:items-start">
+                <a className="flex flex-col items-center rounded-lg border border-neutral-200 bg-white transition-all hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800 dark:hover:border-neutral-600 sm:items-start">
                     {props.thumbnail && props.thumbnail.url !== undefined ? (
                         <Image
                             className="w-full rounded-t-lg"

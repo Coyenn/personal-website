@@ -12,7 +12,7 @@ interface Project {
 
 export default function Project(props: Project) {
     return (
-        <div className="relative mb-16 grid grid-cols-1 md:mb-0 md:grid-cols-2 md:gap-20">
+        <div className="relative grid grid-cols-1 md:mb-0 md:grid-cols-2 md:gap-20">
             {props.direction === "left" ? (
                 <span className="hidden sm:flex"></span>
             ) : (
