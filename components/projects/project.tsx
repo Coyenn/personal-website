@@ -1,6 +1,7 @@
 import useMouse from "@react-hook/mouse-position";
 import Image from "next/image";
 import * as React from "react";
+import Button from "../button/button";
 
 interface Project {
     title: string;
@@ -27,29 +28,23 @@ export default function Project(props: Project) {
                 <p className="text-lg text-black dark:text-white sm:text-lg lg:text-2xl">
                     {props.title}
                 </p>
-                <p className="text-gray-400 lg:text-xl">{props.content}</p>
+                <p className="text-neutral-400 lg:text-xl">{props.content}</p>
                 <div className="flex flex-row gap-5">
                     {props.website && props.website !== "" ? (
-                        <a
-                            href={props.website}
-                            target={"_blank"}
-                            rel={"noreferrer"}
-                            className="rounded bg-blue-600 px-3 py-2 text-center text-white transition-colors hover:bg-blue-500"
-                        >
-                            Visit Website
-                        </a>
+                        <Button
+                            link={props.website}
+                            text="Visit Website"
+                            variant="primary"
+                        />
                     ) : (
                         ""
                     )}
                     {props.repository && props.repository !== "" ? (
-                        <a
-                            href={props.repository}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="rounded border border-neutral-200 bg-transparent px-3 py-2 text-center font-light text-neutral-400 transition-colors hover:border-neutral-300 hover:text-neutral-500 dark:border-neutral-600 dark:hover:text-neutral-300"
-                        >
-                            Repositroy
-                        </a>
+                        <Button
+                            link={props.repository}
+                            text="Repository"
+                            variant="secondary"
+                        />
                     ) : (
                         ""
                     )}

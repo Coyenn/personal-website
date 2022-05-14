@@ -7,7 +7,7 @@ function AllPosts({ allPosts }) {
 
     return (
         <>
-            <div className="mb-5 md:mb-10">
+            <div className="mb-10 md:mb-20">
                 <Fade bottom delay={300} duration={500} distance={"50px"}>
                     <Post
                         id={firstPost.id}

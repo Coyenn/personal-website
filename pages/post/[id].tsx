@@ -67,7 +67,7 @@ class PostView extends React.Component<BlogPostProps, BlogPostState> {
                                             <h1 className="lead mb-4 font-normal md:mb-5">
                                                 {this.props.post?.title}
                                             </h1>
-                                            <p className="secondary order-first mb-2 md:order-last md:mb-0">
+                                            <p className="order-first mb-2 text-neutral-400 md:order-last md:mb-0">
                                                 <small>
                                                     <span className="sr-only">
                                                         This blog post was first

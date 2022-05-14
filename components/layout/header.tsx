@@ -48,7 +48,7 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                                     />
                                     <a
                                         href={"/"}
-                                        className="w-full pl-2 text-center text-neutral-400 no-underline hover:text-black dark:text-white sm:border-0 sm:text-sm"
+                                        className="hidden w-full pl-2 text-center text-neutral-400 no-underline hover:text-black dark:text-white sm:flex sm:border-0 sm:text-sm"
                                     >
                                         Tim Ritter
                                     </a>
