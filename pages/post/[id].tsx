@@ -7,16 +7,26 @@ import query from "../../lib/cms-query";
 import React from "react";
 import Container from "../../components/layout/container";
 import formatDate from "../../lib/format-date";
+import Button from "../../components/button/button";
 
 interface BlogPostProps {
     id: string;
     token: string;
     post: Post;
+    otherPosts: OtherPost[];
 }
 
 interface PostThumbnail {
     url: string;
     alt: string;
+}
+
+interface OtherPost {
+    id: string;
+    title: string;
+    published: boolean;
+    _status: string;
+    _firstPublishedAt: string;
 }
 
 interface Post {
@@ -65,9 +75,9 @@ class PostView extends React.Component<BlogPostProps, BlogPostState> {
                             <Container>
                                 <div className="mb-10">
                                     <Link href="/" passHref={true}>
-                                        <a className="cursor-pointer text-black dark:text-white">
+                                        <a className="cursor-pointer text-black transition-colors hover:text-neutral-700 dark:text-white hover:dark:text-neutral-300">
                                             <ArrowLeftIcon className="mr-2 inline h-4 w-4" />
-                                            Go back
+                                            Back
                                         </a>
                                     </Link>
                                 </div>
@@ -92,24 +102,22 @@ class PostView extends React.Component<BlogPostProps, BlogPostState> {
                                         />
                                         <div className="flex flex-col gap-5 md:mx-20 lg:mx-32">
                                             <p className="text-neutral-400">
-                                                <small>
-                                                    <span className="sr-only">
-                                                        This blog post was first
-                                                        published on
-                                                    </span>
-                                                    <span className="flex flex-row justify-center sm:justify-start">
-                                                        <p className="border-r border-neutral-200 pr-2 text-sm font-normal text-neutral-400 dark:border-neutral-800">
-                                                            Tim Ritter
-                                                        </p>
-                                                        <p className="pl-2 text-center text-sm text-neutral-400 sm:text-left">
-                                                            {formatDate(
-                                                                new Date(
-                                                                    this.props.post._firstPublishedAt
-                                                                )
-                                                            )}
-                                                        </p>
-                                                    </span>
-                                                </small>
+                                                <span className="sr-only">
+                                                    This blog post was first
+                                                    published on
+                                                </span>
+                                                <span className="flex flex-row justify-center sm:justify-start">
+                                                    <p className="border-r border-neutral-200 pr-2 text-sm font-normal text-neutral-400 dark:border-neutral-800">
+                                                        Tim Ritter
+                                                    </p>
+                                                    <p className="pl-2 text-center text-sm text-neutral-400 sm:text-left">
+                                                        {formatDate(
+                                                            new Date(
+                                                                this.props.post._firstPublishedAt
+                                                            )
+                                                        )}
+                                                    </p>
+                                                </span>
                                             </p>
                                             <h1 className="text-2xl text-black dark:text-white md:text-3xl lg:text-5xl">
                                                 {this.props.post?.title}
@@ -124,6 +132,39 @@ class PostView extends React.Component<BlogPostProps, BlogPostState> {
                                 ) : (
                                     <></>
                                 )}
+                                <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 md:mt-10 md:gap-10">
+                                    {this.props.otherPosts?.map(
+                                        (otherPost: OtherPost) => {
+                                            return (
+                                                <Link
+                                                    href={`/post/${otherPost.id}`}
+                                                >
+                                                    <a>
+                                                        <div className="flex flex-col gap-5 rounded-md border p-4 dark:border-neutral-700 hover:dark:border-neutral-600">
+                                                            <span className="flex flex-row justify-center sm:justify-start">
+                                                                <p className="border-r border-neutral-200 pr-2 text-sm font-normal text-neutral-400 dark:border-neutral-800">
+                                                                    Tim Ritter
+                                                                </p>
+                                                                <p className="pl-2 text-center text-sm text-neutral-400 sm:text-left">
+                                                                    {formatDate(
+                                                                        new Date(
+                                                                            otherPost._firstPublishedAt
+                                                                        )
+                                                                    )}
+                                                                </p>
+                                                            </span>
+                                                            <h2 className="text-lg font-normal text-black dark:text-white md:text-3xl lg:text-xl">
+                                                                {
+                                                                    otherPost?.title
+                                                                }
+                                                            </h2>
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            );
+                                        }
+                                    )}
+                                </div>
                             </Container>
                         </PageSection>
                     </article>
@@ -145,12 +186,19 @@ export async function getStaticProps(context) {
             token
         )
     )?.blogPost;
+    const otherPosts = (
+        await query(
+            `{allBlogPosts(filter: {id: {neq: "${id}"}}, first: 2) { id, title, published, _status, _firstPublishedAt }}`,
+            token
+        )
+    )?.allBlogPosts;
 
     return {
         props: {
             id,
             token,
             post,
+            otherPosts,
         },
     };
 }

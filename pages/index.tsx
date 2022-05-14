@@ -68,13 +68,13 @@ function Home({ allProjects, allPosts }) {
                     className="border-b border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950"
                 >
                     <Container>
-                        <p className="mb-5 text-center text-base font-normal uppercase text-blue-500 md:mb-7 lg:mb-12">
+                        <p className="mb-7 text-center text-base font-normal uppercase text-blue-500 md:mb-12">
                             Building websites using
                             <br />
                             modern technologies
                         </p>
                         <div className="mx-auto">
-                            <div className="flex justify-center gap-2 overflow-x-auto sm:gap-5 md:gap-10">
+                            <div className="flex flex-wrap justify-center gap-5 overflow-x-auto md:gap-10">
                                 <ReactJs
                                     className="technology-icon"
                                     size={50}

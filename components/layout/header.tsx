@@ -46,12 +46,9 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                                         width={30}
                                         height={30}
                                     />
-                                    <a
-                                        href={"/"}
-                                        className="hidden w-full pl-2 text-center text-neutral-400 no-underline hover:text-black dark:text-white sm:flex sm:border-0 sm:text-sm"
-                                    >
+                                    <p className="hidden w-full pl-2 text-center text-neutral-400 no-underline hover:text-black dark:text-white sm:flex sm:border-0 sm:text-sm">
                                         Tim Ritter
-                                    </a>
+                                    </p>
                                 </a>
                             </Link>
                             <button
@@ -72,7 +69,7 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                                 <a
                                     href={href}
                                     key={href}
-                                    className="w-full border-t border-neutral-100 px-10 py-5 text-center text-neutral-400 no-underline hover:text-black dark:border-neutral-700 dark:text-white sm:border-0 sm:px-2 sm:text-sm"
+                                    className="w-full border-t border-neutral-100 px-10 text-center text-neutral-400 no-underline hover:text-black dark:border-neutral-700 dark:text-white sm:border-0 sm:px-2 sm:text-sm"
                                 >
                                     {text}
                                 </a>
