@@ -138,6 +138,7 @@ class PostView extends React.Component<BlogPostProps, BlogPostState> {
                                             return (
                                                 <Link
                                                     href={`/post/${otherPost.id}`}
+                                                    key={otherPost.id}
                                                 >
                                                     <a>
                                                         <div className="flex flex-col gap-5 rounded-md border p-4 dark:border-neutral-700 hover:dark:border-neutral-600">
