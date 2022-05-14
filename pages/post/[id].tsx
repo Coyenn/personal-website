@@ -6,6 +6,7 @@ import ReactMarkdown from "react-markdown";
 import query from "../../lib/cms-query";
 import React from "react";
 import Container from "../../components/layout/container";
+import formatDate from "../../lib/format-date";
 
 interface BlogPostProps {
     id: string;
@@ -58,7 +59,7 @@ class PostView extends React.Component<BlogPostProps, BlogPostState> {
                 <main>
                     <article>
                         <PageSection
-                            size="2xl"
+                            size="xl"
                             className="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900"
                         >
                             <Container>
@@ -96,11 +97,18 @@ class PostView extends React.Component<BlogPostProps, BlogPostState> {
                                                         This blog post was first
                                                         published on
                                                     </span>
-                                                    {
-                                                        this.props.post?._firstPublishedAt.split(
-                                                            "T"
-                                                        )[0]
-                                                    }
+                                                    <span className="flex flex-row justify-center sm:justify-start">
+                                                        <p className="border-r border-neutral-200 pr-2 text-sm font-normal text-neutral-400 dark:border-neutral-800">
+                                                            Tim Ritter
+                                                        </p>
+                                                        <p className="pl-2 text-center text-sm text-neutral-400 sm:text-left">
+                                                            {formatDate(
+                                                                new Date(
+                                                                    this.props.post._firstPublishedAt
+                                                                )
+                                                            )}
+                                                        </p>
+                                                    </span>
                                                 </small>
                                             </p>
                                             <h1 className="text-2xl text-black dark:text-white md:text-3xl lg:text-5xl">

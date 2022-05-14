@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import formatDate from "../../lib/format-date";
 
 export interface Thumbnail {
     url: string;
@@ -16,18 +17,6 @@ export interface Post {
     thumbnail: Thumbnail;
     teaser: string;
     size: "large" | "small";
-}
-
-function padTo2Digits(num) {
-    return num.toString().padStart(2, "0");
-}
-
-function formatDate(date) {
-    return [
-        padTo2Digits(date.getDate()),
-        padTo2Digits(date.getMonth() + 1),
-        date.getFullYear(),
-    ].join(".");
 }
 
 export default function Post(props: Post) {
