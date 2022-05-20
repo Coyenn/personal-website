@@ -7,6 +7,7 @@ import TRLogoNew from "../../public/TRLogoNew.svg";
 const links = [
     ["/", "Home"],
     ["/blog", "Blog"],
+    ["/about", "About"],
 ];
 
 interface HeaderState {
