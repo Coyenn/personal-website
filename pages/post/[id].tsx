@@ -8,6 +8,7 @@ import React from "react";
 import Container from "../../components/layout/container";
 import formatDate from "../../lib/format-date";
 import Button from "../../components/button/button";
+import FadeIn from "react-fade-in";
 
 interface BlogPostProps {
     id: string;
@@ -69,66 +70,76 @@ class PostView extends React.Component<BlogPostProps, BlogPostState> {
                 <main>
                     <article>
                         <PageSection
-                            size="xl"
+                            size="2xl"
                             className="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900"
                         >
                             <Container>
-                                <div className="mb-10">
-                                    <Link href="/" passHref={true}>
-                                        <a className="cursor-pointer text-black transition-colors hover:text-neutral-700 dark:text-white hover:dark:text-neutral-300">
-                                            <ArrowLeftIcon className="mr-2 inline h-4 w-4" />
-                                            Back
-                                        </a>
-                                    </Link>
-                                </div>
+                                <FadeIn>
+                                    <div className="mb-10">
+                                        <Link href="/" passHref={true}>
+                                            <a className="cursor-pointer text-black transition-colors hover:text-neutral-700 dark:text-white hover:dark:text-neutral-300">
+                                                <ArrowLeftIcon className="mr-2 inline h-4 w-4" />
+                                                Back
+                                            </a>
+                                        </Link>
+                                    </div>
+                                </FadeIn>
                                 {this.props.post?.title !== undefined &&
                                 this.props.post?.published === true ? (
-                                    <div className="flex flex-col gap-5">
-                                        <Image
-                                            className="w-full rounded-lg"
-                                            src={
-                                                this.props.post?.thumbnail?.url
-                                            }
-                                            alt={
-                                                this.props.post?.thumbnail?.alt
-                                            }
-                                            width={1920}
-                                            height={1080}
-                                            quality={50}
-                                            blurDataURL={
-                                                this.props.post?.thumbnail?.url
-                                            }
-                                            placeholder="blur"
-                                        />
-                                        <div className="flex flex-col gap-5 md:mx-20 lg:mx-32">
-                                            <p className="text-neutral-400">
-                                                <span className="sr-only">
-                                                    This blog post was first
-                                                    published on
-                                                </span>
-                                                <span className="flex flex-row justify-center sm:justify-start">
-                                                    <p className="border-r border-neutral-200 pr-2 text-sm font-normal text-neutral-400 dark:border-neutral-800">
-                                                        Tim Ritter
-                                                    </p>
-                                                    <p className="pl-2 text-center text-sm text-neutral-400 sm:text-left">
-                                                        {formatDate(
-                                                            new Date(
-                                                                this.props.post._firstPublishedAt
-                                                            )
-                                                        )}
-                                                    </p>
-                                                </span>
-                                            </p>
-                                            <h1 className="text-2xl text-black dark:text-white md:text-3xl lg:text-5xl">
-                                                {this.props.post?.title}
-                                            </h1>
-                                            <div className="prose min-w-full dark:prose-invert md:text-lg">
-                                                <ReactMarkdown>
-                                                    {this.props.post?.content}
-                                                </ReactMarkdown>
+                                    <FadeIn>
+                                        <div className="flex flex-col gap-5">
+                                            <Image
+                                                className="w-full rounded-lg"
+                                                src={
+                                                    this.props.post?.thumbnail
+                                                        ?.url
+                                                }
+                                                alt={
+                                                    this.props.post?.thumbnail
+                                                        ?.alt
+                                                }
+                                                width={1920}
+                                                height={1080}
+                                                quality={50}
+                                                blurDataURL={
+                                                    this.props.post?.thumbnail
+                                                        ?.url
+                                                }
+                                                placeholder="blur"
+                                            />
+                                            <div className="flex flex-col gap-5 md:mx-20 lg:mx-32">
+                                                <p className="text-neutral-400">
+                                                    <span className="sr-only">
+                                                        This blog post was first
+                                                        published on
+                                                    </span>
+                                                    <span className="flex flex-row justify-center sm:justify-start">
+                                                        <p className="border-r border-neutral-200 pr-2 text-sm font-normal text-neutral-400 dark:border-neutral-800">
+                                                            Tim Ritter
+                                                        </p>
+                                                        <p className="pl-2 text-center text-sm text-neutral-400 sm:text-left">
+                                                            {formatDate(
+                                                                new Date(
+                                                                    this.props.post._firstPublishedAt
+                                                                )
+                                                            )}
+                                                        </p>
+                                                    </span>
+                                                </p>
+                                                <h1 className="text-2xl text-black dark:text-white md:text-3xl lg:text-5xl">
+                                                    {this.props.post?.title}
+                                                </h1>
+                                                <div className="prose min-w-full dark:prose-invert md:text-lg">
+                                                    <ReactMarkdown>
+                                                        {
+                                                            this.props.post
+                                                                ?.content
+                                                        }
+                                                    </ReactMarkdown>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </FadeIn>
                                 ) : (
                                     <></>
                                 )}

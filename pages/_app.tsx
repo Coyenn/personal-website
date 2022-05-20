@@ -4,6 +4,7 @@ import "../styles/globals.scss";
 import BackgroundGrid from "../components/utility/background-grid";
 import Header from "../components/layout/header";
 import DarkModeDetector from "../components/utility/dark-mode-detector";
+import { NextWebVitalsMetric } from "next/app";
 
 function App({ Component, pageProps }) {
     return (
@@ -52,3 +53,24 @@ function App({ Component, pageProps }) {
 }
 
 export default App;
+
+// Web vitals and logging via Axiom
+// (Axiom.com/vercel)
+export function reportWebVitals(metric: NextWebVitalsMetric) {
+    const url = process.env.NEXT_PUBLIC_AXIOM_INGEST_ENDPOINT;
+
+    if (!url) {
+        return;
+    }
+
+    const body = JSON.stringify({
+        route: window.__NEXT_DATA__.page,
+        ...metric,
+    });
+
+    if (navigator.sendBeacon) {
+        navigator.sendBeacon(url, body);
+    } else {
+        fetch(url, { body, method: "POST", keepalive: true });
+    }
+}

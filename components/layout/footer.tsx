@@ -16,7 +16,7 @@ export default function Footer() {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <span className="text-neutral-400 transition-colors hover:text-neutral-300 dark:hover:text-neutral-500">
+                        <span className="text-neutral-400 transition-colors hover:text-neutral-600 dark:hover:text-neutral-200">
                             <small>Source Code</small>
                             <ExternalLinkIcon className="ml-1 inline h-4 w-4" />
                         </span>
