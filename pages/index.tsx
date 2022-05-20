@@ -149,6 +149,7 @@ function Home({ allProjects, allPosts }) {
                 <PageSection
                     size="2xl"
                     className="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900"
+                    id="posts"
                 >
                     <Container>
                         <h3 className="mb-10 text-center text-2xl text-black dark:text-white md:text-3xl lg:mb-20 lg:text-5xl">
