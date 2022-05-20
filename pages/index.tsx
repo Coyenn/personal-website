@@ -17,6 +17,8 @@ import {
     Gitpod,
 } from "@icons-pack/react-simple-icons";
 import Image from "next/image";
+import BackgroundGrid from "../components/utility/background-grid";
+import AboutMeSection from "../components/sections/about-me";
 
 export async function getStaticProps() {
     const allProjects = (
@@ -42,29 +44,31 @@ function Home({ allProjects, allPosts }) {
     return (
         <main>
             <FadeIn>
-                <div className="relative flex justify-center overflow-hidden border-b border-neutral-200 dark:border-neutral-800">
-                    <PageSection size="2xl">
-                        <Container>
-                            <div className="flex flex-col items-center">
-                                <div className="h-16 w-16 md:h-28 md:w-28">
-                                    <Image
-                                        src={TRLogoNew}
-                                        alt="Tim Ritter Logo"
-                                        layout="responsive"
-                                    />
+                <BackgroundGrid>
+                    <div className="relative flex justify-center border-b border-neutral-200 dark:border-neutral-800">
+                        <PageSection size="2xl">
+                            <Container>
+                                <div className="flex flex-col items-center">
+                                    <div className="h-16 w-16 md:h-28 md:w-28">
+                                        <Image
+                                            src={TRLogoNew}
+                                            alt="Tim Ritter Logo"
+                                            layout="responsive"
+                                        />
+                                    </div>
+                                    <h1 className="text-center text-4xl font-medium leading-tight text-black dark:text-white md:text-5xl lg:text-6xl xl:text-[5rem] 2xl:text-[6rem]">
+                                        Designer
+                                        <br />
+                                        Programmer
+                                        <br />
+                                        Thinker
+                                        <br />
+                                    </h1>
                                 </div>
-                                <h1 className="text-center text-4xl font-medium leading-tight text-black dark:text-white md:text-5xl lg:text-6xl xl:text-[5rem] 2xl:text-[6rem]">
-                                    Designer
-                                    <br />
-                                    Programmer
-                                    <br />
-                                    Thinker
-                                    <br />
-                                </h1>
-                            </div>
-                        </Container>
-                    </PageSection>
-                </div>
+                            </Container>
+                        </PageSection>
+                    </div>
+                </BackgroundGrid>
                 <PageSection
                     size="xl"
                     className="border-b border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950"
@@ -94,45 +98,7 @@ function Home({ allProjects, allPosts }) {
                     className="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900"
                 >
                     <Container>
-                        <h3 className="mb-10 text-center text-2xl text-black dark:text-white md:text-3xl lg:mb-20 lg:text-5xl">
-                            About Me
-                        </h3>
-                        <div className="flex flex-col gap-5 md:mx-20 2xl:mx-52">
-                            <h2 className="text-base font-normal text-neutral-500 dark:text-neutral-300 md:text-xl">
-                                Hey there! I&apos;m Tim, a{" "}
-                                {Math.floor(
-                                    (Number(new Date()) -
-                                        new Date("2004-06-05").getTime()) /
-                                        3.15576e10
-                                ).toString()}
-                                -year-old trainee Software Developer from
-                                Germany. I&apos;ve been interested in visually
-                                pleasing web experiences for a while. One day I
-                                started out creating websites as a hobby. Now I
-                                do it full-time and try to gradually improve my
-                                work one step at a time.
-                            </h2>
-                            <div className="flex flex-row gap-5">
-                                <a
-                                    href="https://github.com/coyenn"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="text-blue-500 transition-colors hover:text-blue-400"
-                                >
-                                    GitHub
-                                    <ExternalLinkIcon className="ml-1 mb-1 inline h-4 w-4" />
-                                </a>
-                                <a
-                                    href="https://twitter.com/kojenia"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="text-blue-500 transition-colors hover:text-blue-400"
-                                >
-                                    Twitter
-                                    <ExternalLinkIcon className="ml-1 mb-1 inline h-4 w-4" />
-                                </a>
-                            </div>
-                        </div>
+                        <AboutMeSection />
                     </Container>
                 </PageSection>
                 <PageSection

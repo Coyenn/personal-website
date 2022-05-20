@@ -5,8 +5,9 @@ import Image from "next/image";
 import TRLogoNew from "../../public/TRLogoNew.svg";
 
 const links = [
-    ["https://github.com/coyenn", "GitHub"],
-    ["https://twitter.com/kojenia", "Twitter"],
+    ["/", "Home"],
+    ["/blog", "Blog"],
+    ["/about", "About"],
 ];
 
 interface HeaderState {
@@ -67,13 +68,11 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                             }`}
                         >
                             {links.map(([href, text]) => (
-                                <a
-                                    href={href}
-                                    key={href}
-                                    className="w-full border-t border-neutral-100 py-5 px-10 text-center text-neutral-400 no-underline transition-colors hover:text-black dark:border-neutral-700 dark:text-white dark:hover:text-neutral-200 md:border-0 md:py-0 md:px-2 md:text-sm"
-                                >
-                                    {text}
-                                </a>
+                                <Link href={href} key={href}>
+                                    <a className="w-full border-t border-neutral-100 py-5 px-10 text-center text-neutral-400 no-underline transition-colors hover:text-black dark:border-neutral-700 dark:text-white dark:hover:text-neutral-200 md:border-0 md:py-0 md:px-2 md:text-sm">
+                                        {text}
+                                    </a>
+                                </Link>
                             ))}
                         </div>
                     </div>

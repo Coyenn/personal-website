@@ -76,7 +76,10 @@ class PostView extends React.Component<BlogPostProps, BlogPostState> {
                             <Container>
                                 <FadeIn>
                                     <div className="mb-10">
-                                        <Link href="/#posts" passHref={true}>
+                                        <Link
+                                            href="/blog#posts"
+                                            passHref={true}
+                                        >
                                             <a className="cursor-pointer text-black transition-colors hover:text-neutral-700 dark:text-white hover:dark:text-neutral-300">
                                                 <ArrowLeftIcon className="mr-2 inline h-4 w-4" />
                                                 Back
