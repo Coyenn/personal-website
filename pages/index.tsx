@@ -45,21 +45,23 @@ function Home({ allProjects, allPosts }) {
                 <div className="relative flex justify-center overflow-hidden border-b border-neutral-200 dark:border-neutral-800">
                     <PageSection size="2xl">
                         <Container>
-                            <div className="mb-4 hidden justify-center sm:mb-6 md:mb-8 md:flex lg:mb-10">
-                                <Image
-                                    src={TRLogoNew}
-                                    width={150}
-                                    height={150}
-                                />
+                            <div className="flex flex-col items-center">
+                                <div className="h-16 w-16 md:h-28 md:w-28">
+                                    <Image
+                                        src={TRLogoNew}
+                                        alt="Tim Ritter Logo"
+                                        layout="responsive"
+                                    />
+                                </div>
+                                <h1 className="text-center text-4xl font-medium leading-tight text-black dark:text-white md:text-5xl lg:text-6xl xl:text-[5rem] 2xl:text-[6rem]">
+                                    Designer
+                                    <br />
+                                    Programmer
+                                    <br />
+                                    Thinker
+                                    <br />
+                                </h1>
                             </div>
-                            <h1 className="text-center text-4xl font-medium leading-tight text-black dark:text-white md:mb-32 md:text-5xl lg:text-6xl xl:text-[5rem] 2xl:text-[6rem]">
-                                Designer
-                                <br />
-                                Programmer
-                                <br />
-                                Thinker
-                                <br />
-                            </h1>
                         </Container>
                     </PageSection>
                 </div>
@@ -75,29 +77,14 @@ function Home({ allProjects, allPosts }) {
                         </p>
                         <div className="mx-auto">
                             <div className="flex flex-wrap justify-center gap-5 overflow-x-auto md:gap-10">
-                                <ReactJs
-                                    className="technology-icon"
-                                    size={50}
-                                />
-                                <Nextdotjs
-                                    className="technology-icon"
-                                    size={50}
-                                />
-                                <Tailwindcss
-                                    className="technology-icon"
-                                    size={50}
-                                />
-                                <Docker className="technology-icon" size={50} />
-                                <Typescript
-                                    className="technology-icon"
-                                    size={50}
-                                />
-                                <Git className="technology-icon" size={50} />
-                                <Gitpod className="technology-icon" size={50} />
-                                <Visualstudiocode
-                                    className="technology-icon"
-                                    size={50}
-                                />
+                                <ReactJs className="technology-icon h-8 w-8 lg:h-12 lg:w-12" />
+                                <Nextdotjs className="technology-icon h-8 w-8 lg:h-12 lg:w-12" />
+                                <Tailwindcss className="technology-icon h-8 w-8 lg:h-12 lg:w-12" />
+                                <Docker className="technology-icon h-8 w-8 lg:h-12 lg:w-12" />
+                                <Typescript className="technology-icon h-8 w-8 lg:h-12 lg:w-12" />
+                                <Git className="technology-icon h-8 w-8 lg:h-12 lg:w-12" />
+                                <Gitpod className="technology-icon h-8 w-8 lg:h-12 lg:w-12" />
+                                <Visualstudiocode className="technology-icon h-8 w-8 lg:h-12 lg:w-12" />
                             </div>
                         </div>
                     </Container>

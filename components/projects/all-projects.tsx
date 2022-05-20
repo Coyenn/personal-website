@@ -1,5 +1,4 @@
 import Project from "./project";
-import Fade from "react-reveal/Fade";
 
 function AllProjects({ allProjects }) {
     let even = false;
@@ -14,18 +13,14 @@ function AllProjects({ allProjects }) {
                     if (project._status === "published") {
                         return (
                             <div className="md:py-20" key={project.id}>
-                                <Fade bottom duration={500} distance={"50px"}>
-                                    <Project
-                                        website={project.website}
-                                        repository={project.repository}
-                                        title={project.title}
-                                        content={project.content}
-                                        key={project.id}
-                                        direction={
-                                            even === true ? "left" : "right"
-                                        }
-                                    />
-                                </Fade>
+                                <Project
+                                    website={project.website}
+                                    repository={project.repository}
+                                    title={project.title}
+                                    content={project.content}
+                                    key={project.id}
+                                    direction={even === true ? "left" : "right"}
+                                />
                             </div>
                         );
                     }

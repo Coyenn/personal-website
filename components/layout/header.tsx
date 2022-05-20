@@ -45,6 +45,7 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                                         src={TRLogoNew}
                                         width={30}
                                         height={30}
+                                        alt="Tim Ritter Logo"
                                     />
                                     <p className="hidden w-full pl-2 text-center text-neutral-400 no-underline hover:text-black dark:text-white md:flex md:border-0 md:text-sm">
                                         Tim Ritter

@@ -70,7 +70,7 @@ class PostView extends React.Component<BlogPostProps, BlogPostState> {
                 <main>
                     <article>
                         <PageSection
-                            size="xl"
+                            size="2xl"
                             className="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900"
                         >
                             <Container>
