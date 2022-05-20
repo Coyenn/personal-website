@@ -17,6 +17,7 @@ import {
     Gitpod,
 } from "@icons-pack/react-simple-icons";
 import Image from "next/image";
+import BackgroundGrid from "../components/utility/background-grid";
 
 export async function getStaticProps() {
     const allProjects = (
@@ -42,29 +43,31 @@ function Home({ allProjects, allPosts }) {
     return (
         <main>
             <FadeIn>
-                <div className="relative flex justify-center overflow-hidden border-b border-neutral-200 dark:border-neutral-800">
-                    <PageSection size="2xl">
-                        <Container>
-                            <div className="flex flex-col items-center">
-                                <div className="h-16 w-16 md:h-28 md:w-28">
-                                    <Image
-                                        src={TRLogoNew}
-                                        alt="Tim Ritter Logo"
-                                        layout="responsive"
-                                    />
+                <BackgroundGrid>
+                    <div className="relative flex justify-center border-b border-neutral-200 dark:border-neutral-800">
+                        <PageSection size="2xl">
+                            <Container>
+                                <div className="flex flex-col items-center">
+                                    <div className="h-16 w-16 md:h-28 md:w-28">
+                                        <Image
+                                            src={TRLogoNew}
+                                            alt="Tim Ritter Logo"
+                                            layout="responsive"
+                                        />
+                                    </div>
+                                    <h1 className="text-center text-4xl font-medium leading-tight text-black dark:text-white md:text-5xl lg:text-6xl xl:text-[5rem] 2xl:text-[6rem]">
+                                        Designer
+                                        <br />
+                                        Programmer
+                                        <br />
+                                        Thinker
+                                        <br />
+                                    </h1>
                                 </div>
-                                <h1 className="text-center text-4xl font-medium leading-tight text-black dark:text-white md:text-5xl lg:text-6xl xl:text-[5rem] 2xl:text-[6rem]">
-                                    Designer
-                                    <br />
-                                    Programmer
-                                    <br />
-                                    Thinker
-                                    <br />
-                                </h1>
-                            </div>
-                        </Container>
-                    </PageSection>
-                </div>
+                            </Container>
+                        </PageSection>
+                    </div>
+                </BackgroundGrid>
                 <PageSection
                     size="xl"
                     className="border-b border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950"

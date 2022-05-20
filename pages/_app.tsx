@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Footer from "../components/layout/footer";
 import "../styles/globals.scss";
-import BackgroundGrid from "../components/utility/background-grid";
 import Header from "../components/layout/header";
 import DarkModeDetector from "../components/utility/dark-mode-detector";
 import { NextWebVitalsMetric } from "next/app";
@@ -41,11 +40,9 @@ function App({ Component, pageProps }) {
             </Head>
             <DarkModeDetector>
                 <Header />
-                <BackgroundGrid>
-                    <div className="lg:pt-30 pt-10 sm:pt-20">
-                        <Component {...pageProps} />
-                    </div>
-                </BackgroundGrid>
+                <div className="lg:pt-30 pt-10 sm:pt-20">
+                    <Component {...pageProps} />
+                </div>
                 <Footer />
             </DarkModeDetector>
         </div>
