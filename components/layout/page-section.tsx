@@ -1,6 +1,6 @@
 interface PageSectionProps {
     children: React.ReactNode;
-    size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
+    size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
     className?: string;
     id?: string;
 }
@@ -9,6 +9,15 @@ export default function PageSection(props: PageSectionProps) {
     const size = props.size || "md";
 
     switch (size) {
+        case "xs":
+            return (
+                <div
+                    className={`py-1 md:py-2 ${props.className}`}
+                    id={props.id}
+                >
+                    {props.children}
+                </div>
+            );
         case "sm":
             return (
                 <div

@@ -146,7 +146,7 @@ class PostView extends React.Component<BlogPostProps, BlogPostState> {
                                 ) : (
                                     <></>
                                 )}
-                                <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 md:mt-10 md:gap-10">
+                                <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 md:mt-10 md:gap-10 lg:mt-20">
                                     {this.props.otherPosts?.map(
                                         (otherPost: OtherPost) => {
                                             return (
