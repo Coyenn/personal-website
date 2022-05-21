@@ -1,6 +1,6 @@
 import * as React from "react";
 import Button from "../button/button";
-import Card from "../button/card";
+import Card from "../card/card";
 
 interface Project {
     title: string;

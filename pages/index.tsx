@@ -5,7 +5,6 @@ import AllPosts from "../components/posts/all-posts";
 import AllProjects from "../components/projects/all-projects";
 import query from "../lib/cms-query";
 import TRLogoNew from "../public/TRLogoNew.svg";
-import { ExternalLinkIcon } from "@heroicons/react/solid";
 import {
     ReactJs,
     Nextdotjs,
