@@ -1,6 +1,4 @@
 import { ExternalLinkIcon } from "@heroicons/react/solid";
-import Container from "../layout/container";
-import PageSection from "../layout/page-section";
 
 export default function AboutMeSection() {
     return (

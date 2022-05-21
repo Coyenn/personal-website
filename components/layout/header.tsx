@@ -8,6 +8,7 @@ const links = [
     ["/", "Home"],
     ["/blog", "Blog"],
     ["/about", "About"],
+    ["/inspiration", "Inspiration"],
 ];
 
 interface HeaderState {

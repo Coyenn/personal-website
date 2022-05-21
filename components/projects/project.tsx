@@ -1,7 +1,6 @@
-import useMouse from "@react-hook/mouse-position";
-import Image from "next/image";
 import * as React from "react";
 import Button from "../button/button";
+import Card from "../button/card";
 
 interface Project {
     title: string;
@@ -19,12 +18,7 @@ export default function Project(props: Project) {
             ) : (
                 ""
             )}
-            <a
-                href={props.website || props.repository}
-                target={"_blank"}
-                rel="noreferrer"
-                className="flex flex-col gap-5 rounded-lg border border-neutral-200 bg-white p-5 no-underline hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-600 lg:gap-8 lg:p-8"
-            >
+            <Card link={props.website || props.repository}>
                 <p className="text-lg text-black dark:text-white sm:text-lg lg:text-2xl">
                     {props.title}
                 </p>
@@ -49,7 +43,7 @@ export default function Project(props: Project) {
                         ""
                     )}
                 </div>
-            </a>
+            </Card>
             {props.direction !== "left" ? <span></span> : ""}
         </div>
     );
