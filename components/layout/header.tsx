@@ -1,8 +1,8 @@
-import { MenuAlt1Icon } from "@heroicons/react/outline";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import TRLogoNew from "/public/TRLogoNew.svg";
+import MenuIcon from "../icons/menu-icon";
 
 const links = [
     ["/", "Home"],
@@ -58,7 +58,7 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                                 onClick={() => this.toggleOpen()}
                                 className="absolute right-0 top-0 flex h-full items-center p-5 md:hidden"
                             >
-                                <MenuAlt1Icon className="h-5 w-5 text-black dark:text-white" />
+                                <MenuIcon />
                             </button>
                         </div>
                         <div
@@ -70,7 +70,7 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                         >
                             {links.map(([href, text]) => (
                                 <Link href={href} key={href}>
-                                    <a className="w-full border-t border-neutral-100 py-5 px-10 text-center text-neutral-400 no-underline transition-colors hover:text-black dark:border-neutral-700 dark:text-white dark:hover:text-neutral-200 md:border-0 md:py-0 md:px-2 md:text-sm">
+                                    <a className="hover:underline underline-offset-2 w-full border-t border-neutral-100 py-5 px-10 text-center text-neutral-400 no-underline transition-colors hover:text-black dark:border-neutral-700 dark:text-white dark:hover:text-neutral-200 md:border-0 md:py-0 md:px-2 md:text-sm">
                                         {text}
                                     </a>
                                 </Link>
