@@ -6,10 +6,14 @@
 @import "tailwindcss/utilities";
 
 /*
-* Import custom scss
+* Import base scss
 */
-@import "./fonts.scss";
-@import "./type.scss";
-@import "./accessibility.scss";
-@import "./background-grid.scss";
-@import "./technology-icon.scss";
+@import "./base/fonts.scss";
+@import "./base/type.scss";
+@import "./base/accessibility.scss";
+
+/*
+* Import custom component scss
+*/
+@import "./components/background-grid.scss";
+@import "./components/technology-icon.scss";
