@@ -2,7 +2,7 @@ import { MenuAlt1Icon } from "@heroicons/react/outline";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import TRLogoNew from "../../public/TRLogoNew.svg";
+import TRLogoNew from "/public/TRLogoNew.svg";
 
 const links = [
     ["/", "Home"],

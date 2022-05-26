@@ -32,7 +32,7 @@ export default function Post(props: Post) {
                             width={1920}
                             height={1080}
                             quality={50}
-                            blurDataURL={props.thumbnail?.url}
+                            blurDataURL={props.thumbnail?.url + "?h=100&w-200"}
                             placeholder="blur"
                         />
                     ) : (
