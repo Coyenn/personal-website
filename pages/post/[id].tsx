@@ -7,7 +7,6 @@ import query from "../../lib/cms-query";
 import React from "react";
 import Container from "../../components/layout/container";
 import formatDate from "../../lib/format-date";
-import Button from "../../components/button/button";
 import FadeIn from "react-fade-in";
 
 interface BlogPostProps {
@@ -106,7 +105,7 @@ class PostView extends React.Component<BlogPostProps, BlogPostState> {
                                                 quality={50}
                                                 blurDataURL={
                                                     this.props.post?.thumbnail
-                                                        ?.url
+                                                        ?.url + "?h=100&w-200"
                                                 }
                                                 placeholder="blur"
                                             />

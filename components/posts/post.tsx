@@ -32,7 +32,7 @@ export default function Post(props: Post) {
                             width={1920}
                             height={1080}
                             quality={50}
-                            blurDataURL={props.thumbnail?.url}
+                            blurDataURL={props.thumbnail?.url + "?h=100&w-200"}
                             placeholder="blur"
                         />
                     ) : (
@@ -42,7 +42,7 @@ export default function Post(props: Post) {
                         <p className="-mb-2 text-center text-xs text-neutral-400 sm:text-left">
                             Technology
                         </p>
-                        <p className="text-center text-xl text-black dark:text-white sm:text-left sm:text-xl md:text-2xl">
+                        <p className="text-center text-lg text-black dark:text-white sm:text-left lg:text-2xl">
                             {props.title}
                         </p>
                         {props.size === "large" ? (
