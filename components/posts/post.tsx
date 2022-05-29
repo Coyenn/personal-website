@@ -42,7 +42,7 @@ export default function Post(props: Post) {
                         <p className="-mb-2 text-center text-xs text-neutral-400 sm:text-left">
                             Technology
                         </p>
-                        <p className="text-center text-lg text-black dark:text-white sm:text-left lg:text-2xl">
+                        <p className="text-center text-lg text-black dark:text-white sm:text-left lg:text-2xl hover:underline underline-offset-4">
                             {props.title}
                         </p>
                         {props.size === "large" ? (
