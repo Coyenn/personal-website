@@ -48,7 +48,7 @@ export default function InspirationPage(props: InspirationPageProps) {
                                             width={550}
                                             height={300}
                                             placeholder="blur"
-                                            blurDataURL={inspiration.image.url}
+                                            blurDataURL={inspiration.image.url  + "?h=100&w-200"}
                                         />
                                     </div>
                                     <p className="pt-2 text-neutral-400 sm:pt-5 lg:pt-8">
