@@ -8,6 +8,7 @@
         "format": "prettier --write \"./**/*.{ts,tsx,js,jsx,json}\""
     },
     "dependencies": {
+        "@headlessui/react": "^1.6.4",
         "autoprefixer": "10.4.7",
         "next": "12.1.6",
         "postcss": "8.4.14",

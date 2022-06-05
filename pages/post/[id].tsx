@@ -39,28 +39,11 @@ interface Post {
     thumbnail: PostThumbnail;
 }
 interface BlogPostState {
-    loading: boolean;
-    id: undefined | string;
 }
 
 class PostView extends React.Component<BlogPostProps, BlogPostState> {
     constructor(props: BlogPostProps) {
         super(props);
-        this.state = {
-            loading: true,
-            id: undefined,
-        };
-    }
-
-    componentDidMount(): void {
-        this.loadPost();
-    }
-
-    async loadPost() {
-        this.setState({
-            loading: false,
-            id: this.props.id.toString(),
-        });
     }
 
     render() {

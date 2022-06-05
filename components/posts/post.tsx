@@ -1,25 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import formatDate from "../../lib/format-date";
+import Tag from "../tag/tag";
+import Post from "../../interfaces/post";
 
-export interface Thumbnail {
-    url: string;
-    alt: string;
-    width: number;
-    height: number;
-}
-
-export interface Post {
-    title: string;
-    content: string;
-    id: string;
-    publishedAt: string;
-    thumbnail: Thumbnail;
-    teaser: string;
-    size: "large" | "small";
-}
-
-export default function Post(props: Post) {
+export default function BlogPost(props: Post) {
     return (
         <span className="mx-auto block">
             <Link href={`/post/${props.id}`} passHref={true}>
@@ -39,19 +24,6 @@ export default function Post(props: Post) {
                         ""
                     )}
                     <span className="flex flex-col justify-between gap-5 pt-4 lg:pt-6">
-                        <p className="-mb-2 text-center text-xs text-neutral-400 sm:text-left">
-                            Technology
-                        </p>
-                        <p className="text-center text-lg text-black dark:text-white sm:text-left lg:text-2xl hover:underline underline-offset-4">
-                            {props.title}
-                        </p>
-                        {props.size === "large" ? (
-                            <p className="text-center text-base text-neutral-500 dark:text-neutral-300 sm:text-left md:text-lg">
-                                {props.teaser}
-                            </p>
-                        ) : (
-                            ""
-                        )}
                         <span className="flex flex-row justify-center sm:justify-start">
                             <p className="border-r border-neutral-200 pr-2 text-sm font-normal text-neutral-400 dark:border-neutral-800">
                                 Tim Ritter
@@ -60,6 +32,17 @@ export default function Post(props: Post) {
                                 {formatDate(new Date(props.publishedAt))}
                             </p>
                         </span>
+                        <p className="text-center text-lg text-black dark:text-white sm:text-left lg:text-2xl hover:underline underline-offset-4">
+                            {props.title}
+                        </p>
+                        <p className="text-center text-base text-neutral-500 dark:text-neutral-300 sm:text-left md:text-lg">
+                            {props.teaser}
+                        </p>
+                        <div>
+                            {props.tags.map((tag) => (
+                                <Tag key={tag.label} label={tag.label} color={tag.color} />
+                            ))}
+                        </div>
                     </span>
                 </a>
             </Link>

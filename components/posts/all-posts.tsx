@@ -15,6 +15,7 @@ function AllPosts({ allPosts }) {
                                 thumbnail={post.thumbnail}
                                 teaser={post.teaser}
                                 key={post.id}
+                                tags={post.tags}
                                 size={"small"}
                             />
                         </>
