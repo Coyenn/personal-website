@@ -22,12 +22,12 @@ import AboutMeSection from "../components/sections/about-me";
 export async function getStaticProps() {
     const allProjects = (
         await query(
-            "{ allProjects { icon { url, alt }, title, content, website, repository, id, _status } }"
+            "{ allProjects { icon { url, alt }, tags { color, label }, title, content, website, repository, id, _status } }"
         )
     )?.allProjects;
     const allPosts = (
         await query(
-            "{ allBlogPosts { thumbnail { url, alt, width, height }, teaser, title, content, published, id, _firstPublishedAt, _status } }"
+            "{ allBlogPosts { thumbnail { url, alt, width, height }, tags { color, label }, teaser, title, content, published, id, _firstPublishedAt, _status } }"
         )
     )?.allBlogPosts;
 

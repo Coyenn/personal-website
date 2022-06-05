@@ -63,15 +63,17 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                             </button>
                         </div>
                         <div
-                            className={`flex flex-col items-center justify-center md:flex-row transition duration-500 ${
-                                this.state.isOpen === false
-                                    ? "opacity-0 h-0 md:opacity-100 md:flex transition-none"
-                                    : "opacity-100 h-full"
-                            } md:h-auto`}
+                            className={`flex flex-col items-center justify-center duration-500 md:flex-row`}
                         >
                             {links.map(([href, text]) => (
                                 <Link href={href} key={href}>
-                                    <a className="w-full border-t border-neutral-100 py-5 px-10 text-center text-neutral-700 no-underline underline-offset-2 transition-colors hover:text-black hover:underline dark:border-neutral-700 dark:text-white dark:hover:text-neutral-200 md:border-0 md:py-0 md:px-2 md:text-sm">
+                                    <a
+                                        className={`${
+                                            !this.state.isOpen
+                                                ? "hidden"
+                                                : "inline"
+                                        } w-full border-t border-neutral-100 py-5 px-10 text-center text-neutral-700 no-underline transition-colors hover:text-black dark:border-neutral-700 dark:text-white dark:hover:text-neutral-200 md:inline md:border-0 md:py-0 md:px-2 md:text-sm`}
+                                    >
                                         {text}
                                     </a>
                                 </Link>

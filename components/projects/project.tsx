@@ -1,16 +1,10 @@
 import * as React from "react";
 import Button from "../button/button";
 import Card from "../card/card";
+import Tag from "../tag/tag";
+import Project from "../../interfaces/project";
 
-interface Project {
-    title: string;
-    content: string;
-    website: string;
-    repository: string;
-    direction: string;
-}
-
-export default function Project(props: Project) {
+export default function ProjectPreview(props: Project) {
     return (
         <div className="relative grid grid-cols-1 md:mb-0 md:grid-cols-2 md:gap-20">
             {props.direction === "left" ? (
@@ -20,7 +14,10 @@ export default function Project(props: Project) {
             )}
             <Card link={props.website || props.repository}>
                 <p className="text-lg text-black dark:text-white sm:text-lg lg:text-2xl">
-                    {props.title}
+                    {props.title}<br />
+                    {props.tags.map((tag) => (
+                        <Tag key={tag.label} label={tag.label} color={tag.color} />
+                    ))}
                 </p>
                 <p className="text-neutral-400 lg:text-xl">{props.content}</p>
                 <div className="flex flex-row gap-5">

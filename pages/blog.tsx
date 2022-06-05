@@ -7,7 +7,7 @@ import query from "../lib/cms-query";
 export async function getStaticProps() {
     const allPosts = (
         await query(
-            "{ allBlogPosts { thumbnail { url, alt, width, height }, teaser, title, content, published, id, _firstPublishedAt, _status } }"
+            "{ allBlogPosts { thumbnail { url, alt, width, height }, tags { color, label }, teaser, title, content, published, id, _firstPublishedAt, _status } }"
         )
     )?.allBlogPosts;
 
