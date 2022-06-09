@@ -6,7 +6,7 @@ export default function AboutMeSection() {
             <h3 className="mb-10 text-center text-2xl text-black dark:text-white md:text-3xl lg:mb-20 lg:text-5xl">
                 About Me
             </h3>
-            <div className="flex flex-col gap-5 md:mx-20 2xl:mx-52">
+            <div className="flex flex-col gap-5 md:mx-20 2xl:mx-32">
                 <h2 className="text-base font-normal text-neutral-500 dark:text-neutral-300 md:text-xl">
                     Hey there! I&apos;m Tim, a{" "}
                     {Math.floor(

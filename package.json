@@ -16,7 +16,7 @@
         "react-dom": "18.1.0",
         "react-reveal": "^1.2.2",
         "sass": "1.52.1",
-        "tailwindcss": "3.0.24"
+        "tailwindcss": "3.1.0"
     },
     "devDependencies": {
         "@heroicons/react": "1.0.6",
