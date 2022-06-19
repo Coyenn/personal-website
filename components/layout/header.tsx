@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import TRLogoNew from "/public/TRLogoNew.svg";
 import MenuIcon from "../icons/menu-icon";
+import { Transition } from "@headlessui/react";
 
 const links = [
     ["/", "Home"],
@@ -33,8 +34,8 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                 <nav
                     onClick={() => this.toggleOpen()}
                     className={`container mx-auto ${
-                        this.state.isOpen === true ? "h-screen" : "h-auto"
-                    } md:h-auto`}
+                        this.state.isOpen === true ? "h-screen md:h-auto" : "h-auto"
+                    }`}
                 >
                     <div className="flex flex-col justify-between md:flex-row">
                         <div className="relative flex justify-center py-5 xl:py-7">
@@ -62,15 +63,17 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                             </button>
                         </div>
                         <div
-                            className={`flex flex-col items-center justify-center md:flex-row ${
-                                this.state.isOpen === false
-                                    ? "hidden md:flex"
-                                    : ""
-                            }`}
+                            className={`flex flex-col items-center justify-center duration-500 md:flex-row`}
                         >
                             {links.map(([href, text]) => (
                                 <Link href={href} key={href}>
-                                    <a className="hover:underline underline-offset-2 sm:hover:no-underline w-full border-t border-neutral-100 py-5 px-10 text-center text-neutral-400 no-underline transition-colors hover:text-black dark:border-neutral-700 dark:text-white dark:hover:text-neutral-200 md:border-0 md:py-0 md:px-2 md:text-sm">
+                                    <a
+                                        className={`${
+                                            !this.state.isOpen
+                                                ? "hidden"
+                                                : "inline"
+                                        } w-full border-t border-neutral-100 py-5 px-10 text-center text-neutral-700 no-underline transition-colors hover:text-black dark:border-neutral-700 dark:text-white dark:hover:text-neutral-200 md:inline md:border-0 md:py-0 md:px-2 md:text-sm`}
+                                    >
                                         {text}
                                     </a>
                                 </Link>

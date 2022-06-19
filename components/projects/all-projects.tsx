@@ -19,6 +19,7 @@ function AllProjects({ allProjects }) {
                                     title={project.title}
                                     content={project.content}
                                     key={project.id}
+                                    tags={project.tags}
                                     direction={even === true ? "left" : "right"}
                                 />
                             </div>
