@@ -34,8 +34,8 @@ export default class Header extends React.PureComponent<{}, HeaderState> {
                 <nav
                     onClick={() => this.toggleOpen()}
                     className={`container mx-auto ${
-                        this.state.isOpen === true ? "h-screen" : "h-auto"
-                    } md:h-auto`}
+                        this.state.isOpen === true ? "h-screen md:h-auto" : "h-auto"
+                    }`}
                 >
                     <div className="flex flex-col justify-between md:flex-row">
                         <div className="relative flex justify-center py-5 xl:py-7">

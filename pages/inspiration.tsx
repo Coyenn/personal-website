@@ -40,7 +40,7 @@ export default function InspirationPage(props: InspirationPageProps) {
                                     link={inspiration.link}
                                     key={inspiration.text}
                                 >
-                                    <div className="-m-2 sm:-m-5 lg:-m-8">
+                                    <div className="-m-2 sm:-m-5 lg:-m-8 rounded-lg overflow-hidden">
                                         <Image
                                             layout="responsive"
                                             src={inspiration.image.url}
